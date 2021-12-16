@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)"
+options: "9a1a92567da5ba281853eeb8aa848932366c22d4c906cd6a3183548b7eafb970"
+build_start_time: [1639662688, 147322177]
+build_end_time: [1639662696, 467166900]
+inputs:
+  "/Users/danilafominyh/Projects/orbmobile/macos/Flutter/GeneratedPluginRegistrant.swift": [1639662660, 752923011]
+  "/Users/danilafominyh/Projects/orbmobile/macos/Runner/AppDelegate.swift": [1638972088, 0]
+  "/Users/danilafominyh/Projects/orbmobile/macos/Runner/MainFlutterWindow.swift": [1638972088, 0]
