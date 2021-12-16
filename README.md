@@ -1,68 +1,74 @@
+# ORB - all in one cryptocurrency solution
 
-# My tools:
-
-
-
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px" height="51px" src="https://juststickers.in/wp-content/uploads/2016/07/go-programming-language.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://image.flaticon.com/icons/png/512/1822/1822899.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://stickker.net/wp-content/uploads/2018/11/flutter.png-578x578.png" />
-
-<br /><br /><br /><br />
-
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://cdn.freebiesupply.com/logos/large/2x/leveldb-logo-png-transparent.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://i1.wp.com/techxposer.com/wp-content/uploads/2019/12/grpc-icon.png?fit=626%2C664" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" />
-
-<br /><br /><br /><br />
-
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://www.drupal.org/files/project-images/rain-drop-hi.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://www.docker.com/sites/default/files/d8/2019-07/vertical-logo-monochromatic.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes_%28container_engine%29.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" />
-
-<br /><br /><br /><br />
-
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://cdn.freebiesupply.com/logos/large/2x/graylog-logo-png-transparent.png" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://avatars.githubusercontent.com/u/8562608?s=280&v=4" />
-<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="51px"  height="51px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/1200px-Visual_Studio_Code_1.18_icon.svg.png" />
+[![Website](https://img.shields.io/website?label=codeSTACKr.com&style=for-the-badge&url=https%3A%2F%2Fcodestackr.com)](https://webpage.com)
 
 
-<br /><br /><br /><br />
+<p align="center">
+  <img width="320px" height="320px" src="https://raw.githubusercontent.com/Dancheg97/ORB/master/icon.png" alt="logo"/>
+</p>
 
 
-# Interested in:
+Our goal is to provide the best user expirience with cryptocurrency and blockchain systems.
 
-- Modern tools open-source technolodies
-- High load systems
-- Distributed systems
-- Vulnerabilities and optimization
+Our project is based on those ideas:
+- open
+- fast
+- free
+- secure
+- improving
 
-# Languages:
+<br />
 
-- Go
-- Dart
-- Python
+# Our tools:
 
-# Frameworks:
 
-- gRPC
-- TensorFlow
-- Flutter
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px" height="51px" src="https://juststickers.in/wp-content/uploads/2016/07/go-programming-language.png" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px"  height="51px" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px"  height="51px" src="https://stickker.net/wp-content/uploads/2018/11/flutter.png-578x578.png" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px"  height="51px" src="https://cdn.freebiesupply.com/logos/large/2x/leveldb-logo-png-transparent.png" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px" height="51px" src="https://i1.wp.com/techxposer.com/wp-content/uploads/2019/12/grpc-icon.png?fit=626%2C664" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px"  height="51px" src="https://avatars.githubusercontent.com/u/8562608?s=280&v=4" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px"  height="51px" src="https://10015.io/assets/tools/list/sha512-encrypt-decrypt.svg" />
+<img align="left" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" alt="Visual Studio Code" width="51px"  height="51px" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" />
 
-# Tools:
 
-- Docker
-- Git
+<br /><br /><br /><br /><br />
+
+
+## Open
+
+Project is open, in a variaty of different ways...
+
+Source code is open, community is always welcome for frontend/backend side improvements.
+You can access the token network within:
+- Android
+- IOS
+- WEB
+- Windows
+- MacOS
 - Linux
-- SQL
-- Kubernetes
+- API
+- python/go/dart SDK's
 
-# Skills:
+## Fast
 
-- Developing
-- Testing
-- Debugging
-- Refactoring
+Project is built using the rapid fast `gRPC` protocol, which allows users to get instant information loaded directly from the blockchain network. Also this protocol solves serialization and API versioning problems.
+
+Go language in combination with `gRPC` makes network stable and prevents servers from overloading.
+
+## Free
+
+The core economical concept of a project is that user do not have to pay for any operation happening inside blockchain. This means that all of ORB transfering/trading operations are always covered with 0 fee.
+
+Money cost more, when they are being used, and that is fundamental reason why we think that charging people using cryptocurrencies with fee is unacceptable.
+ORB is built in such a way, that noone of the users will be charged for inner transactions.
+
+## Secure
+
+Most of cryptocurrecies are built using POS/POF mechanism to solve security problems. Some cryptocurrencies has centered node, which is breaking the concept of `secure by distribution`.
+
+In this project we were able to combine the pros of system distribution over network with rapid fast speed, and we were first to achieve that relation.
+
+## Improving
+
+The biggest problem of most cryptocurrecnies is versioning. It is really challenging when it comes to providing good verioning system in distributed system. This system is connected to `GIT` aswell, and has voting system, which allows modifications across multiple users to occure.
