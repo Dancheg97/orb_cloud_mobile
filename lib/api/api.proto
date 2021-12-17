@@ -1,0 +1,200 @@
+syntax = "proto3";
+
+option go_package = "./api";
+
+package api;
+
+/*
+CODE GENERATION BASH COMMANDS:
+Go:
+protoc api/api.proto --go-grpc_out=. --go_out=.
+Dart:
+protoc lib/api/api.proto --dart_out=grpc:.
+*/
+
+
+
+
+//Response (universal response, when no return value required)
+message Response{}
+
+
+service Info{
+    rpc User(InfIn.Adress) returns (InfOut.User);
+    rpc HasTrades(InfIn.UserMarketAdresses) returns (InfOut.Bool);
+    rpc Market(InfIn.Adress) returns (InfOut.MarketInfo);
+    rpc Search(InfIn.Text) returns (InfOut.Adresses);
+    rpc Messages(InfIn.UserMarketAdresses) returns (InfOut.Messages);
+    rpc CheckName(InfIn.Text) returns (InfOut.Bool);
+}
+
+message InfIn{
+    message Adress{
+        bytes adress = 1;
+    }
+    message Text{
+        string text = 1;
+    }
+    message UserMarketAdresses{
+        bytes market_adress = 1;
+        bytes user_adress = 2;
+    }
+}
+
+message InfOut{
+    message User{
+        string public_name = 1;
+        uint64 balance = 2;
+        bytes message_key = 3;
+        repeated bytes market_adresses = 4;
+        repeated uint64 market_balances = 5;
+    }
+    message MarketInfo{
+        string name = 1;
+        bytes messageKey = 2;
+        string imageLink = 3;
+        string description = 4;
+        uint64 operationCount = 5;
+        repeated Trade buys = 6;
+        repeated Trade sells = 7;
+        uint64 activeBuys = 8;
+        uint64 activeSells = 9;
+        uint64 inputFee = 10;
+        uint64 outputFee = 11;
+        string workTime = 12;
+        uint64 delimiter = 14;
+    }
+    message Adresses{
+        repeated bytes marketAdresses = 1;
+    }
+    message Messages{
+        repeated bytes messages = 1;
+    }
+    message Bool{
+        bool value = 1;
+    }
+    message Trade{
+        uint64 offer = 1;
+        uint64 recieve = 2;
+    }
+}
+
+
+
+
+service User{
+    rpc Create(UserRequests.Create) returns (Response);
+    rpc Send(UserRequests.Send) returns (Response);
+    rpc Message(UserRequests.Message) returns (Response);
+    rpc Buy(UserRequests.Trade) returns (Response);
+    rpc Sell(UserRequests.Trade) returns (Response);
+    rpc CancelTrade(UserRequests.CancelTrade) returns (Response);
+}
+
+message UserRequests{
+    message Create{
+        bytes PublicKey = 1;
+        bytes MesssageKey = 2;
+        string PublicName = 3;
+        bytes Sign = 4;
+    }
+    message Send{
+        bytes PublicKey = 1;
+        uint64 SendAmount = 2;
+        bytes RecieverAdress = 3;
+        bytes Sign = 4;
+    }
+    message Message{
+        bytes PublicKey = 1;
+        bytes Adress = 2;
+        bytes Message = 3;
+        bytes Sign = 4;
+    }
+    message Trade{
+        bytes PublicKey = 1;
+        bytes Adress = 2;
+        uint64 Recieve = 3;
+        uint64 Offer = 4;
+        bytes Sign = 5;
+    }
+    message CancelTrade{
+        bytes PublicKey = 1;
+        bytes MarketAdress = 2;
+        bytes Sign = 3;
+    }
+}
+
+
+
+
+service Market{
+    rpc Spawn(MarketRequests.Create) returns (Response);
+    rpc Update(MarketRequests.Update) returns (Response);
+    rpc Deposit(MarketRequests.Deposit) returns (Response);
+    rpc Withdrawal(MarketRequests.Withdrawal) returns (Response);
+    rpc Reply(MarketRequests.Message) returns (Response);
+}
+
+message MarketRequests{
+    message Create{
+        bytes PublicKey = 1;
+        bytes MesssageKey = 2;
+        string Name = 3;
+        string Img = 4;
+        string Descr = 5;
+        uint64 inputFee = 6;
+        uint64 outputFee = 7;
+        string workTime = 8;
+        uint64 delimiter = 9;
+        bytes Sign = 10;
+    }
+    message Update{
+        bytes PublicKey = 1;
+        string Img = 2;
+        string Descr = 3;
+        uint64 inputFee = 4;
+        uint64 outputFee = 5;
+        string workTime = 6;
+        bytes Sign = 7;
+    }
+    message Deposit{
+        bytes PublicKey = 1;
+        bytes UserAdress = 2;
+        uint64 Amount = 3;
+        bytes Sign = 4;
+    }
+    message Withdrawal{
+        bytes PublicKey = 1;
+        bytes UserAdress = 2;
+        uint64 Amount = 3;
+        bytes Sign = 4;
+    }
+    message Message{
+        bytes PublicKey = 1;
+        bytes Adress = 2;
+        bytes Message = 3;
+        bytes Sign = 4;
+    }
+}
+
+
+service Connection{
+    rpc Connect(ConnectionRequests.In) returns (stream ConnectionRequests.Out);
+    rpc Pool(ConnectionRequests.Pool) returns (ConnectionRequests.Pool);
+}
+
+message ConnectionRequests{
+    message In{
+        bytes PublicKey = 1;
+        string WebAdress = 2;
+        bytes Sign = 3;
+    }
+    message Out{
+        bytes Key = 1;
+        bytes Value = 2;
+    }
+    message Pool{
+        repeated string Values = 1;
+    }
+}
+
