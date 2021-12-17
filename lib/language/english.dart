@@ -14,8 +14,8 @@ var english = Language(
       "System is free and open, any organization or individual can put an asset to market. Market owner sets withdrawal and deposit fee on it's market.",
   inroTrading: "Trade",
   introTradingMessage:
-      "All assets are equal to the system, that means that, when you make operations inside system, commission is always zero.",
+      "All assets are equal to the system. Trading operations inside system are covered with zero fee.",
   introFast: "Fast",
   introFastMessage:
-      "Also every operation is fast. Hosting nodes are able to verify transaction in less than 0.01 second.",
+      "Also every transaction is nearly instant. System is architechtured in a way that it is able to verify and distribute transactions over network rapidly fast.",
 );

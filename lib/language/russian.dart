@@ -11,11 +11,11 @@ var english = Language(
       "Система распределена между несколькими удаленными серверами и позволяет ",
   introOpen: "Открытость",
   introOpenMessage:
-      "System is free and open, any organization or individual can put an asset to market. Market owner sets withdrawal and deposit fee on it's market.",
-  inroTrading: "Trade",
+      "Система свободна и открыта, любой желающий может выставить свой актив на рынке. Владелец актива может выставлять комиссии на ввод и вывод.",
+  inroTrading: "Торговля",
   introTradingMessage:
-      "All assets are equal to the system, that means that, when you make operations inside system, commission is always zero.",
-  introFast: "Fast",
+      "Все активы в системе равны между собой. Все торговые операции в системе не покрываются комиссией",
+  introFast: "Скорость",
   introFastMessage:
-      "Also every operation is fast. Hosting nodes are able to verify transaction in less than 0.01 second.",
+      "Так же все операции практически мгновенные. Система спроектирована таким образом что бы была возможность моментально проверять и распространять транзакции по сети.",
 );
