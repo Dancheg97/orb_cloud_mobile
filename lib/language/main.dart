@@ -6,10 +6,10 @@ var lang = getLang();
 
 Language getLang() {
   final String defaultLocale = Platform.localeName;
-  if (defaultLocale.startsWith('en')) {
-    return english;
+  if (defaultLocale.startsWith('ru')) {
+    return russian;
   }
-  return russian;
+  return english;
 }
 
 class Language {
