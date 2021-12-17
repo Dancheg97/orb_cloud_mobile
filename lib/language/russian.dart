@@ -1,4 +1,4 @@
-import 'main.dart';
+import 'language.dart';
 
 var russian = Language(
   pageMarket: "маркет",

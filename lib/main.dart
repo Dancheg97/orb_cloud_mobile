@@ -1,23 +1,18 @@
-import 'package:ORBmobile/language/main.dart';
+import 'package:ORBmobile/intro/intro.dart';
+import 'package:ORBmobile/language/language.dart';
 import 'package:flutter/material.dart';
 import 'theme/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: appTheme,
-      home: Scaffold(
-        body: Center(
-          child: Text(lang.pageMarket),
-        ),
-      ),
+      home: IntroPage(),
     );
   }
 }

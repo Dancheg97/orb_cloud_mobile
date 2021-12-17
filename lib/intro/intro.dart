@@ -1,7 +1,10 @@
+import 'package:ORBmobile/language/language.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroPage extends StatelessWidget {
+  const IntroPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,21 +14,20 @@ class IntroPage extends StatelessWidget {
         freeze: true,
         pages: <PageViewModel>[
           PageViewModel(
-            title: 'Hello!',
+            title: ld.introHello,
             image: Icon(
               Icons.info_rounded,
               size: MediaQuery.of(context).size.width * 0.40,
               color: Theme.of(context).focusColor,
             ),
-            body: 'Here you can get a brief explanation of what '
-                'is going on in this app, and how it works.',
+            body: ld.introHelloMessage,
             decoration: PageDecoration(
               titleTextStyle: Theme.of(context).textTheme.headline1!,
               bodyTextStyle: Theme.of(context).textTheme.headline2!,
             ),
           ),
           PageViewModel(
-            title: 'Search',
+            title: ld.introDistributed,
             image: Icon(
               Icons.manage_search_rounded,
               size: MediaQuery.of(context).size.width * 0.40,
@@ -219,7 +221,7 @@ class NameAndKeyOverlayState extends State<NameAndKeyOverlay>
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headline2,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TextButton(
