@@ -1,16 +1,11 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'english.dart';
 
 var lang = english;
 
 enum Languages {
   english,
-}
-
-void switchLanguage(Languages newLang) {
-  switch (newLang) {
-    case Languages.english:
-      lang = english;
-  }
 }
 
 class Language {
