@@ -8,7 +8,7 @@
 </p>
 
 
-Our goal is to provide the best user expirience with cryptocurrency and blockchain systems.
+Our goal is to rework the approach to create cryptocurrency means. That is no longer a piece of software, but an interface and agreement between multiple users.
 
 Our project is based on those ideas:
 - open
