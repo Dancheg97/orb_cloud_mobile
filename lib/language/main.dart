@@ -1,9 +1,15 @@
 import 'english.dart';
+import 'russian.dart';
+import 'dart:io';
 
-var lang = english;
+var lang = getLang();
 
-enum Languages {
-  english,
+Language getLang() {
+  final String defaultLocale = Platform.localeName;
+  if (defaultLocale.startsWith('en')) {
+    return english;
+  }
+  return russian;
 }
 
 class Language {

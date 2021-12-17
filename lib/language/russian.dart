@@ -1,6 +1,6 @@
 import 'main.dart';
 
-var english = Language(
+var russian = Language(
   pageMarket: "маркет",
   pageWallet: "кошелек",
   pageSettings: "настройки",
