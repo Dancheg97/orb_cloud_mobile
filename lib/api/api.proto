@@ -12,12 +12,8 @@ Dart:
 protoc lib/api/api.proto --dart_out=grpc:.
 */
 
-
-
-
 //Response (universal response, when no return value required)
 message Response{}
-
 
 service Info{
     rpc User(InfIn.Adress) returns (InfOut.User);

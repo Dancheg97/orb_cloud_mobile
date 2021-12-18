@@ -133,15 +133,15 @@ class InfIn_Text extends $pb.GeneratedMessage {
   void clearText() => clearField(1);
 }
 
-class InfIn_UserMarketAdresses extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfIn.UserMarketAdresses', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
+class InfIn_UserMarketAdr extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfIn.UserMarketAdr', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'marketAdress', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userAdress', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
-  InfIn_UserMarketAdresses._() : super();
-  factory InfIn_UserMarketAdresses({
+  InfIn_UserMarketAdr._() : super();
+  factory InfIn_UserMarketAdr({
     $core.List<$core.int>? marketAdress,
     $core.List<$core.int>? userAdress,
   }) {
@@ -154,26 +154,26 @@ class InfIn_UserMarketAdresses extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory InfIn_UserMarketAdresses.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InfIn_UserMarketAdresses.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory InfIn_UserMarketAdr.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InfIn_UserMarketAdr.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  InfIn_UserMarketAdresses clone() => InfIn_UserMarketAdresses()..mergeFromMessage(this);
+  InfIn_UserMarketAdr clone() => InfIn_UserMarketAdr()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InfIn_UserMarketAdresses copyWith(void Function(InfIn_UserMarketAdresses) updates) => super.copyWith((message) => updates(message as InfIn_UserMarketAdresses)) as InfIn_UserMarketAdresses; // ignore: deprecated_member_use
+  InfIn_UserMarketAdr copyWith(void Function(InfIn_UserMarketAdr) updates) => super.copyWith((message) => updates(message as InfIn_UserMarketAdr)) as InfIn_UserMarketAdr; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static InfIn_UserMarketAdresses create() => InfIn_UserMarketAdresses._();
-  InfIn_UserMarketAdresses createEmptyInstance() => create();
-  static $pb.PbList<InfIn_UserMarketAdresses> createRepeated() => $pb.PbList<InfIn_UserMarketAdresses>();
+  static InfIn_UserMarketAdr create() => InfIn_UserMarketAdr._();
+  InfIn_UserMarketAdr createEmptyInstance() => create();
+  static $pb.PbList<InfIn_UserMarketAdr> createRepeated() => $pb.PbList<InfIn_UserMarketAdr>();
   @$core.pragma('dart2js:noInline')
-  static InfIn_UserMarketAdresses getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InfIn_UserMarketAdresses>(create);
-  static InfIn_UserMarketAdresses? _defaultInstance;
+  static InfIn_UserMarketAdr getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InfIn_UserMarketAdr>(create);
+  static InfIn_UserMarketAdr? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get marketAdress => $_getN(0);

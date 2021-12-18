@@ -18,7 +18,7 @@ final $typed_data.Uint8List responseDescriptor = $convert.base64Decode('CghSZXNw
 @$core.Deprecated('Use infInDescriptor instead')
 const InfIn$json = const {
   '1': 'InfIn',
-  '3': const [InfIn_Adress$json, InfIn_Text$json, InfIn_UserMarketAdresses$json],
+  '3': const [InfIn_Adress$json, InfIn_Text$json, InfIn_UserMarketAdr$json],
 };
 
 @$core.Deprecated('Use infInDescriptor instead')
@@ -38,8 +38,8 @@ const InfIn_Text$json = const {
 };
 
 @$core.Deprecated('Use infInDescriptor instead')
-const InfIn_UserMarketAdresses$json = const {
-  '1': 'UserMarketAdresses',
+const InfIn_UserMarketAdr$json = const {
+  '1': 'UserMarketAdr',
   '2': const [
     const {'1': 'market_adress', '3': 1, '4': 1, '5': 12, '10': 'marketAdress'},
     const {'1': 'user_adress', '3': 2, '4': 1, '5': 12, '10': 'userAdress'},
@@ -47,7 +47,7 @@ const InfIn_UserMarketAdresses$json = const {
 };
 
 /// Descriptor for `InfIn`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List infInDescriptor = $convert.base64Decode('CgVJbmZJbhogCgZBZHJlc3MSFgoGYWRyZXNzGAEgASgMUgZhZHJlc3MaGgoEVGV4dBISCgR0ZXh0GAEgASgJUgR0ZXh0GloKElVzZXJNYXJrZXRBZHJlc3NlcxIjCg1tYXJrZXRfYWRyZXNzGAEgASgMUgxtYXJrZXRBZHJlc3MSHwoLdXNlcl9hZHJlc3MYAiABKAxSCnVzZXJBZHJlc3M=');
+final $typed_data.Uint8List infInDescriptor = $convert.base64Decode('CgVJbmZJbhogCgZBZHJlc3MSFgoGYWRyZXNzGAEgASgMUgZhZHJlc3MaGgoEVGV4dBISCgR0ZXh0GAEgASgJUgR0ZXh0GlUKDVVzZXJNYXJrZXRBZHISIwoNbWFya2V0X2FkcmVzcxgBIAEoDFIMbWFya2V0QWRyZXNzEh8KC3VzZXJfYWRyZXNzGAIgASgMUgp1c2VyQWRyZXNz');
 @$core.Deprecated('Use infOutDescriptor instead')
 const InfOut$json = const {
   '1': 'InfOut',

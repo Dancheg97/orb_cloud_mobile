@@ -18,14 +18,25 @@ class InfoClient extends $grpc.Client {
       '/api.Info/User',
       ($0.InfIn_Adress value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.InfOut_User.fromBuffer(value));
+  static final _$userSubscribe =
+      $grpc.ClientMethod<$0.InfIn_Adress, $0.InfOut_User>(
+          '/api.Info/UserSubscribe',
+          ($0.InfIn_Adress value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.InfOut_User.fromBuffer(value));
   static final _$hasTrades =
-      $grpc.ClientMethod<$0.InfIn_UserMarketAdresses, $0.InfOut_Bool>(
+      $grpc.ClientMethod<$0.InfIn_UserMarketAdr, $0.InfOut_Bool>(
           '/api.Info/HasTrades',
-          ($0.InfIn_UserMarketAdresses value) => value.writeToBuffer(),
+          ($0.InfIn_UserMarketAdr value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.InfOut_Bool.fromBuffer(value));
   static final _$market =
       $grpc.ClientMethod<$0.InfIn_Adress, $0.InfOut_MarketInfo>(
           '/api.Info/Market',
+          ($0.InfIn_Adress value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.InfOut_MarketInfo.fromBuffer(value));
+  static final _$marketSubscribe =
+      $grpc.ClientMethod<$0.InfIn_Adress, $0.InfOut_MarketInfo>(
+          '/api.Info/MarketSubscribe',
           ($0.InfIn_Adress value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.InfOut_MarketInfo.fromBuffer(value));
@@ -34,9 +45,15 @@ class InfoClient extends $grpc.Client {
       ($0.InfIn_Text value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.InfOut_Adresses.fromBuffer(value));
   static final _$messages =
-      $grpc.ClientMethod<$0.InfIn_UserMarketAdresses, $0.InfOut_Messages>(
+      $grpc.ClientMethod<$0.InfIn_UserMarketAdr, $0.InfOut_Messages>(
           '/api.Info/Messages',
-          ($0.InfIn_UserMarketAdresses value) => value.writeToBuffer(),
+          ($0.InfIn_UserMarketAdr value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.InfOut_Messages.fromBuffer(value));
+  static final _$messagesSubscribe =
+      $grpc.ClientMethod<$0.InfIn_UserMarketAdr, $0.InfOut_Messages>(
+          '/api.Info/MessagesSubscribe',
+          ($0.InfIn_UserMarketAdr value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.InfOut_Messages.fromBuffer(value));
   static final _$checkName = $grpc.ClientMethod<$0.InfIn_Text, $0.InfOut_Bool>(
@@ -54,8 +71,14 @@ class InfoClient extends $grpc.Client {
     return $createUnaryCall(_$user, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.InfOut_Bool> hasTrades(
-      $0.InfIn_UserMarketAdresses request,
+  $grpc.ResponseStream<$0.InfOut_User> userSubscribe($0.InfIn_Adress request,
+      {$grpc.CallOptions? options}) {
+    return $createStreamingCall(
+        _$userSubscribe, $async.Stream.fromIterable([request]),
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InfOut_Bool> hasTrades($0.InfIn_UserMarketAdr request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$hasTrades, request, options: options);
   }
@@ -65,15 +88,31 @@ class InfoClient extends $grpc.Client {
     return $createUnaryCall(_$market, request, options: options);
   }
 
+  $grpc.ResponseStream<$0.InfOut_MarketInfo> marketSubscribe(
+      $0.InfIn_Adress request,
+      {$grpc.CallOptions? options}) {
+    return $createStreamingCall(
+        _$marketSubscribe, $async.Stream.fromIterable([request]),
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.InfOut_Adresses> search($0.InfIn_Text request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$search, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.InfOut_Messages> messages(
-      $0.InfIn_UserMarketAdresses request,
+      $0.InfIn_UserMarketAdr request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$messages, request, options: options);
+  }
+
+  $grpc.ResponseStream<$0.InfOut_Messages> messagesSubscribe(
+      $0.InfIn_UserMarketAdr request,
+      {$grpc.CallOptions? options}) {
+    return $createStreamingCall(
+        _$messagesSubscribe, $async.Stream.fromIterable([request]),
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.InfOut_Bool> checkName($0.InfIn_Text request,
@@ -93,19 +132,33 @@ abstract class InfoServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.InfIn_Adress.fromBuffer(value),
         ($0.InfOut_User value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.InfIn_UserMarketAdresses, $0.InfOut_Bool>(
+    $addMethod($grpc.ServiceMethod<$0.InfIn_Adress, $0.InfOut_User>(
+        'UserSubscribe',
+        userSubscribe_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $0.InfIn_Adress.fromBuffer(value),
+        ($0.InfOut_User value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InfIn_UserMarketAdr, $0.InfOut_Bool>(
         'HasTrades',
         hasTrades_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.InfIn_UserMarketAdresses.fromBuffer(value),
+            $0.InfIn_UserMarketAdr.fromBuffer(value),
         ($0.InfOut_Bool value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.InfIn_Adress, $0.InfOut_MarketInfo>(
         'Market',
         market_Pre,
         false,
         false,
+        ($core.List<$core.int> value) => $0.InfIn_Adress.fromBuffer(value),
+        ($0.InfOut_MarketInfo value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InfIn_Adress, $0.InfOut_MarketInfo>(
+        'MarketSubscribe',
+        marketSubscribe_Pre,
+        false,
+        true,
         ($core.List<$core.int> value) => $0.InfIn_Adress.fromBuffer(value),
         ($0.InfOut_MarketInfo value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.InfIn_Text, $0.InfOut_Adresses>(
@@ -115,15 +168,22 @@ abstract class InfoServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.InfIn_Text.fromBuffer(value),
         ($0.InfOut_Adresses value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$0.InfIn_UserMarketAdresses, $0.InfOut_Messages>(
-            'Messages',
-            messages_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.InfIn_UserMarketAdresses.fromBuffer(value),
-            ($0.InfOut_Messages value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InfIn_UserMarketAdr, $0.InfOut_Messages>(
+        'Messages',
+        messages_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.InfIn_UserMarketAdr.fromBuffer(value),
+        ($0.InfOut_Messages value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InfIn_UserMarketAdr, $0.InfOut_Messages>(
+        'MessagesSubscribe',
+        messagesSubscribe_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) =>
+            $0.InfIn_UserMarketAdr.fromBuffer(value),
+        ($0.InfOut_Messages value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.InfIn_Text, $0.InfOut_Bool>(
         'CheckName',
         checkName_Pre,
@@ -138,8 +198,13 @@ abstract class InfoServiceBase extends $grpc.Service {
     return user(call, await request);
   }
 
+  $async.Stream<$0.InfOut_User> userSubscribe_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.InfIn_Adress> request) async* {
+    yield* userSubscribe(call, await request);
+  }
+
   $async.Future<$0.InfOut_Bool> hasTrades_Pre($grpc.ServiceCall call,
-      $async.Future<$0.InfIn_UserMarketAdresses> request) async {
+      $async.Future<$0.InfIn_UserMarketAdr> request) async {
     return hasTrades(call, await request);
   }
 
@@ -148,14 +213,25 @@ abstract class InfoServiceBase extends $grpc.Service {
     return market(call, await request);
   }
 
+  $async.Stream<$0.InfOut_MarketInfo> marketSubscribe_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.InfIn_Adress> request) async* {
+    yield* marketSubscribe(call, await request);
+  }
+
   $async.Future<$0.InfOut_Adresses> search_Pre(
       $grpc.ServiceCall call, $async.Future<$0.InfIn_Text> request) async {
     return search(call, await request);
   }
 
   $async.Future<$0.InfOut_Messages> messages_Pre($grpc.ServiceCall call,
-      $async.Future<$0.InfIn_UserMarketAdresses> request) async {
+      $async.Future<$0.InfIn_UserMarketAdr> request) async {
     return messages(call, await request);
+  }
+
+  $async.Stream<$0.InfOut_Messages> messagesSubscribe_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.InfIn_UserMarketAdr> request) async* {
+    yield* messagesSubscribe(call, await request);
   }
 
   $async.Future<$0.InfOut_Bool> checkName_Pre(
@@ -165,14 +241,20 @@ abstract class InfoServiceBase extends $grpc.Service {
 
   $async.Future<$0.InfOut_User> user(
       $grpc.ServiceCall call, $0.InfIn_Adress request);
+  $async.Stream<$0.InfOut_User> userSubscribe(
+      $grpc.ServiceCall call, $0.InfIn_Adress request);
   $async.Future<$0.InfOut_Bool> hasTrades(
-      $grpc.ServiceCall call, $0.InfIn_UserMarketAdresses request);
+      $grpc.ServiceCall call, $0.InfIn_UserMarketAdr request);
   $async.Future<$0.InfOut_MarketInfo> market(
+      $grpc.ServiceCall call, $0.InfIn_Adress request);
+  $async.Stream<$0.InfOut_MarketInfo> marketSubscribe(
       $grpc.ServiceCall call, $0.InfIn_Adress request);
   $async.Future<$0.InfOut_Adresses> search(
       $grpc.ServiceCall call, $0.InfIn_Text request);
   $async.Future<$0.InfOut_Messages> messages(
-      $grpc.ServiceCall call, $0.InfIn_UserMarketAdresses request);
+      $grpc.ServiceCall call, $0.InfIn_UserMarketAdr request);
+  $async.Stream<$0.InfOut_Messages> messagesSubscribe(
+      $grpc.ServiceCall call, $0.InfIn_UserMarketAdr request);
   $async.Future<$0.InfOut_Bool> checkName(
       $grpc.ServiceCall call, $0.InfIn_Text request);
 }
