@@ -1,4 +1,5 @@
 import 'package:basic_utils/basic_utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<bool> importKeys(String keys) async {
   var keysListToCheck = keys.split('|');
@@ -11,6 +12,11 @@ Future<bool> importKeys(String keys) async {
       return false;
     }
   }
+  var prefs = await SharedPreferences.getInstance();
+  prefs.setString('persPriv', keysListToCheck[0]);
+  prefs.setString('persPub', keysListToCheck[1]);
+  prefs.setString('mesPriv', keysListToCheck[2]);
+  prefs.setString('mesPub', keysListToCheck[3]);
   return true;
 }
 

@@ -1,7 +1,7 @@
 import 'package:basic_utils/basic_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<String> encrypt(String message) async {
+Future<String> encryptMes(String message) async {
   var prefs = await SharedPreferences.getInstance();
   var mesPublic = prefs.getString('mesPub') ?? 'error';
   if (mesPublic == 'error') {
