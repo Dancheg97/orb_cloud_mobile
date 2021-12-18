@@ -1,6 +1,6 @@
 # API
 
-Данный пакет содержит:
-- proto файл с описанием схемы взаимодействия с сетью
-- сгенеренный код для grpc соединения, лучше не трогать
-- export.dart для удобного импорта пакета, трогать нет смысла
+This package contains:
+- proto file with api description
+- automtically generated files for interaciton with network
+- export.dart for convenient importing
