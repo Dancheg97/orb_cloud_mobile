@@ -9,3 +9,4 @@ This package contains functions and classes related to cryptography inside app:
 - Sign Uint8list
 - Get personal adress Uint8list
 - Get personal adress base64
+- Get any key bytes
