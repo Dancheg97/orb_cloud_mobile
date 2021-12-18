@@ -194,6 +194,35 @@ class InfIn_UserMarketAdr extends $pb.GeneratedMessage {
   void clearUserAdress() => clearField(2);
 }
 
+class InfIn_Empty extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfIn.Empty', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  InfIn_Empty._() : super();
+  factory InfIn_Empty() => create();
+  factory InfIn_Empty.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InfIn_Empty.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InfIn_Empty clone() => InfIn_Empty()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InfIn_Empty copyWith(void Function(InfIn_Empty) updates) => super.copyWith((message) => updates(message as InfIn_Empty)) as InfIn_Empty; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static InfIn_Empty create() => InfIn_Empty._();
+  InfIn_Empty createEmptyInstance() => create();
+  static $pb.PbList<InfIn_Empty> createRepeated() => $pb.PbList<InfIn_Empty>();
+  @$core.pragma('dart2js:noInline')
+  static InfIn_Empty getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InfIn_Empty>(create);
+  static InfIn_Empty? _defaultInstance;
+}
+
 class InfIn extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfIn', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..hasRequiredFields = false
@@ -705,6 +734,47 @@ class InfOut_Trade extends $pb.GeneratedMessage {
   $core.bool hasRecieve() => $_has(1);
   @$pb.TagNumber(2)
   void clearRecieve() => clearField(2);
+}
+
+class InfOut_IPs extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfOut.IPs', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'adresses')
+    ..hasRequiredFields = false
+  ;
+
+  InfOut_IPs._() : super();
+  factory InfOut_IPs({
+    $core.Iterable<$core.String>? adresses,
+  }) {
+    final _result = create();
+    if (adresses != null) {
+      _result.adresses.addAll(adresses);
+    }
+    return _result;
+  }
+  factory InfOut_IPs.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InfOut_IPs.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InfOut_IPs clone() => InfOut_IPs()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InfOut_IPs copyWith(void Function(InfOut_IPs) updates) => super.copyWith((message) => updates(message as InfOut_IPs)) as InfOut_IPs; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static InfOut_IPs create() => InfOut_IPs._();
+  InfOut_IPs createEmptyInstance() => create();
+  static $pb.PbList<InfOut_IPs> createRepeated() => $pb.PbList<InfOut_IPs>();
+  @$core.pragma('dart2js:noInline')
+  static InfOut_IPs getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InfOut_IPs>(create);
+  static InfOut_IPs? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get adresses => $_getList(0);
 }
 
 class InfOut extends $pb.GeneratedMessage {

@@ -18,7 +18,7 @@ final $typed_data.Uint8List responseDescriptor = $convert.base64Decode('CghSZXNw
 @$core.Deprecated('Use infInDescriptor instead')
 const InfIn$json = const {
   '1': 'InfIn',
-  '3': const [InfIn_Adress$json, InfIn_Text$json, InfIn_UserMarketAdr$json],
+  '3': const [InfIn_Adress$json, InfIn_Text$json, InfIn_UserMarketAdr$json, InfIn_Empty$json],
 };
 
 @$core.Deprecated('Use infInDescriptor instead')
@@ -46,12 +46,17 @@ const InfIn_UserMarketAdr$json = const {
   ],
 };
 
+@$core.Deprecated('Use infInDescriptor instead')
+const InfIn_Empty$json = const {
+  '1': 'Empty',
+};
+
 /// Descriptor for `InfIn`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List infInDescriptor = $convert.base64Decode('CgVJbmZJbhogCgZBZHJlc3MSFgoGYWRyZXNzGAEgASgMUgZhZHJlc3MaGgoEVGV4dBISCgR0ZXh0GAEgASgJUgR0ZXh0GlUKDVVzZXJNYXJrZXRBZHISIwoNbWFya2V0X2FkcmVzcxgBIAEoDFIMbWFya2V0QWRyZXNzEh8KC3VzZXJfYWRyZXNzGAIgASgMUgp1c2VyQWRyZXNz');
+final $typed_data.Uint8List infInDescriptor = $convert.base64Decode('CgVJbmZJbhogCgZBZHJlc3MSFgoGYWRyZXNzGAEgASgMUgZhZHJlc3MaGgoEVGV4dBISCgR0ZXh0GAEgASgJUgR0ZXh0GlUKDVVzZXJNYXJrZXRBZHISIwoNbWFya2V0X2FkcmVzcxgBIAEoDFIMbWFya2V0QWRyZXNzEh8KC3VzZXJfYWRyZXNzGAIgASgMUgp1c2VyQWRyZXNzGgcKBUVtcHR5');
 @$core.Deprecated('Use infOutDescriptor instead')
 const InfOut$json = const {
   '1': 'InfOut',
-  '3': const [InfOut_User$json, InfOut_MarketInfo$json, InfOut_Adresses$json, InfOut_Messages$json, InfOut_Bool$json, InfOut_Trade$json],
+  '3': const [InfOut_User$json, InfOut_MarketInfo$json, InfOut_Adresses$json, InfOut_Messages$json, InfOut_Bool$json, InfOut_Trade$json, InfOut_IPs$json],
 };
 
 @$core.Deprecated('Use infOutDescriptor instead')
@@ -119,8 +124,16 @@ const InfOut_Trade$json = const {
   ],
 };
 
+@$core.Deprecated('Use infOutDescriptor instead')
+const InfOut_IPs$json = const {
+  '1': 'IPs',
+  '2': const [
+    const {'1': 'adresses', '3': 1, '4': 3, '5': 9, '10': 'adresses'},
+  ],
+};
+
 /// Descriptor for `InfOut`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List infOutDescriptor = $convert.base64Decode('CgZJbmZPdXQatAEKBFVzZXISHwoLcHVibGljX25hbWUYASABKAlSCnB1YmxpY05hbWUSGAoHYmFsYW5jZRgCIAEoBFIHYmFsYW5jZRIfCgttZXNzYWdlX2tleRgDIAEoDFIKbWVzc2FnZUtleRInCg9tYXJrZXRfYWRyZXNzZXMYBCADKAxSDm1hcmtldEFkcmVzc2VzEicKD21hcmtldF9iYWxhbmNlcxgFIAMoBFIObWFya2V0QmFsYW5jZXMargMKCk1hcmtldEluZm8SEgoEbmFtZRgBIAEoCVIEbmFtZRIeCgptZXNzYWdlS2V5GAIgASgMUgptZXNzYWdlS2V5EhwKCWltYWdlTGluaxgDIAEoCVIJaW1hZ2VMaW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhImCg5vcGVyYXRpb25Db3VudBgFIAEoBFIOb3BlcmF0aW9uQ291bnQSJQoEYnV5cxgGIAMoCzIRLmFwaS5JbmZPdXQuVHJhZGVSBGJ1eXMSJwoFc2VsbHMYByADKAsyES5hcGkuSW5mT3V0LlRyYWRlUgVzZWxscxIeCgphY3RpdmVCdXlzGAggASgEUgphY3RpdmVCdXlzEiAKC2FjdGl2ZVNlbGxzGAkgASgEUgthY3RpdmVTZWxscxIaCghpbnB1dEZlZRgKIAEoBFIIaW5wdXRGZWUSHAoJb3V0cHV0RmVlGAsgASgEUglvdXRwdXRGZWUSGgoId29ya1RpbWUYDCABKAlSCHdvcmtUaW1lEhwKCWRlbGltaXRlchgOIAEoBFIJZGVsaW1pdGVyGjIKCEFkcmVzc2VzEiYKDm1hcmtldEFkcmVzc2VzGAEgAygMUg5tYXJrZXRBZHJlc3NlcxomCghNZXNzYWdlcxIaCghtZXNzYWdlcxgBIAMoDFIIbWVzc2FnZXMaHAoEQm9vbBIUCgV2YWx1ZRgBIAEoCFIFdmFsdWUaNwoFVHJhZGUSFAoFb2ZmZXIYASABKARSBW9mZmVyEhgKB3JlY2lldmUYAiABKARSB3JlY2lldmU=');
+final $typed_data.Uint8List infOutDescriptor = $convert.base64Decode('CgZJbmZPdXQatAEKBFVzZXISHwoLcHVibGljX25hbWUYASABKAlSCnB1YmxpY05hbWUSGAoHYmFsYW5jZRgCIAEoBFIHYmFsYW5jZRIfCgttZXNzYWdlX2tleRgDIAEoDFIKbWVzc2FnZUtleRInCg9tYXJrZXRfYWRyZXNzZXMYBCADKAxSDm1hcmtldEFkcmVzc2VzEicKD21hcmtldF9iYWxhbmNlcxgFIAMoBFIObWFya2V0QmFsYW5jZXMargMKCk1hcmtldEluZm8SEgoEbmFtZRgBIAEoCVIEbmFtZRIeCgptZXNzYWdlS2V5GAIgASgMUgptZXNzYWdlS2V5EhwKCWltYWdlTGluaxgDIAEoCVIJaW1hZ2VMaW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhImCg5vcGVyYXRpb25Db3VudBgFIAEoBFIOb3BlcmF0aW9uQ291bnQSJQoEYnV5cxgGIAMoCzIRLmFwaS5JbmZPdXQuVHJhZGVSBGJ1eXMSJwoFc2VsbHMYByADKAsyES5hcGkuSW5mT3V0LlRyYWRlUgVzZWxscxIeCgphY3RpdmVCdXlzGAggASgEUgphY3RpdmVCdXlzEiAKC2FjdGl2ZVNlbGxzGAkgASgEUgthY3RpdmVTZWxscxIaCghpbnB1dEZlZRgKIAEoBFIIaW5wdXRGZWUSHAoJb3V0cHV0RmVlGAsgASgEUglvdXRwdXRGZWUSGgoId29ya1RpbWUYDCABKAlSCHdvcmtUaW1lEhwKCWRlbGltaXRlchgOIAEoBFIJZGVsaW1pdGVyGjIKCEFkcmVzc2VzEiYKDm1hcmtldEFkcmVzc2VzGAEgAygMUg5tYXJrZXRBZHJlc3NlcxomCghNZXNzYWdlcxIaCghtZXNzYWdlcxgBIAMoDFIIbWVzc2FnZXMaHAoEQm9vbBIUCgV2YWx1ZRgBIAEoCFIFdmFsdWUaNwoFVHJhZGUSFAoFb2ZmZXIYASABKARSBW9mZmVyEhgKB3JlY2lldmUYAiABKARSB3JlY2lldmUaIQoDSVBzEhoKCGFkcmVzc2VzGAEgAygJUghhZHJlc3Nlcw==');
 @$core.Deprecated('Use userRequestsDescriptor instead')
 const UserRequests$json = const {
   '1': 'UserRequests',

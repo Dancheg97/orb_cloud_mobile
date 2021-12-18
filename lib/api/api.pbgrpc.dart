@@ -60,6 +60,10 @@ class InfoClient extends $grpc.Client {
       '/api.Info/CheckName',
       ($0.InfIn_Text value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.InfOut_Bool.fromBuffer(value));
+  static final _$netMembers = $grpc.ClientMethod<$0.InfIn_Empty, $0.InfOut_IPs>(
+      '/api.Info/NetMembers',
+      ($0.InfIn_Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.InfOut_IPs.fromBuffer(value));
 
   InfoClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -118,6 +122,11 @@ class InfoClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.InfOut_Bool> checkName($0.InfIn_Text request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$checkName, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InfOut_IPs> netMembers($0.InfIn_Empty request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$netMembers, request, options: options);
   }
 }
 
@@ -191,6 +200,13 @@ abstract class InfoServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.InfIn_Text.fromBuffer(value),
         ($0.InfOut_Bool value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InfIn_Empty, $0.InfOut_IPs>(
+        'NetMembers',
+        netMembers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.InfIn_Empty.fromBuffer(value),
+        ($0.InfOut_IPs value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.InfOut_User> user_Pre(
@@ -239,6 +255,11 @@ abstract class InfoServiceBase extends $grpc.Service {
     return checkName(call, await request);
   }
 
+  $async.Future<$0.InfOut_IPs> netMembers_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.InfIn_Empty> request) async {
+    return netMembers(call, await request);
+  }
+
   $async.Future<$0.InfOut_User> user(
       $grpc.ServiceCall call, $0.InfIn_Adress request);
   $async.Stream<$0.InfOut_User> userSubscribe(
@@ -257,6 +278,8 @@ abstract class InfoServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.InfIn_UserMarketAdr request);
   $async.Future<$0.InfOut_Bool> checkName(
       $grpc.ServiceCall call, $0.InfIn_Text request);
+  $async.Future<$0.InfOut_IPs> netMembers(
+      $grpc.ServiceCall call, $0.InfIn_Empty request);
 }
 
 class UserClient extends $grpc.Client {
