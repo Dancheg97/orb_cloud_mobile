@@ -4,14 +4,12 @@ option go_package = "./api";
 
 package api;
 
-/*---------------   CODE GENERATION BASH COMMANDS:   --------------------------
+/* CODEGEN COMMANDS:
 Go:
 protoc api/api.proto --go-grpc_out=. --go_out=.
-
 Dart:
 protoc lib/api/api.proto --dart_out=grpc:.
-
------------------------------------------------------------------------------*/ 
+*/ 
 
 // Response (universal response, when no return value required)
 message Response{}
@@ -107,13 +105,25 @@ message InfOut{
 
 
 
-
+// User service, that is making changes in user data. 
+// Always requires verification.
 service User{
+    // Call that will create new user
     rpc Create(UserRequests.Create) returns (Response);
+
+    // Call that will initiate transaction between users (send some ORB)
     rpc Send(UserRequests.Send) returns (Response);
+
+    // Call used to send message from user to market
     rpc Message(UserRequests.Message) returns (Response);
+
+    // Call used to initiate buy order placement buy user
     rpc Buy(UserRequests.Trade) returns (Response);
+
+    // Call used to initiate sell operation by user
     rpc Sell(UserRequests.Trade) returns (Response);
+
+    // Call used to initiate cancelling of existing trade order on market
     rpc CancelTrade(UserRequests.CancelTrade) returns (Response);
 }
 
