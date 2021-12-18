@@ -9,10 +9,8 @@ void main() {
 
 class App extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: appTheme,
-      home: IntroPage(),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        theme: appTheme,
+        home: Center(),
+      );
 }

@@ -2,9 +2,9 @@ import 'english.dart';
 import 'russian.dart';
 import 'dart:io';
 
-var ld = getLang();
+var ld = _getLang();
 
-Language getLang() {
+Language _getLang() {
   final String defaultLocale = Platform.localeName;
   if (defaultLocale.startsWith('ru')) {
     return russian;
