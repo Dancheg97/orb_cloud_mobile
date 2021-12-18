@@ -24,12 +24,27 @@ import 'sign.dart';
 /// - generate
 /// - sign
 class Crypter {
+  /// Get personal adress in form of `Uint8List`.
   static Future<Uint8List> Function() adressBytes = getAdressBytes;
+
+  /// Get personal adress in form of `String` base64.
   static Future<String> Function() adressBase64 = getAdressBase64;
+
+  /// Decrypt encrypted message.
   static Future<String> Function(String) decrypt = decryptMes;
+
+  /// Encrypted message.
   static Future<String> Function(String) ecnrypt = encryptMes;
+
+  /// Export keys as a single `String`.
   static Future<String> Function() export = exportKeys;
+
+  /// Import and save keys from a single `String`.
   static Future<bool> Function(String) import = importKeys;
+
+  /// Generate new pack of keys.
   static Function() generate = generateKeys;
+
+  /// Sign data using personal private key.
   static Future<Uint8List> Function(Uint8List) sign = signBytes;
 }
