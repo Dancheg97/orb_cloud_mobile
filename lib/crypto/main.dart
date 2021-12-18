@@ -11,11 +11,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 /// ### Crypter (static class)
-/// ---
+/// -----
 /// This is static class that contains only links to crytography
 /// functions functions that can be used in the app.
 /// Functions Might throw an error, in case keys haven't being saved.
-/// ---
+/// -----
 /// Available functions:
 /// - adressBytes
 /// - adressBase64
@@ -27,13 +27,13 @@ import 'dart:convert';
 /// - sign
 class Crypter {
   /// Get personal adress in form of `Uint8List`.
-  Future<String> getAdressBase64() async {
-    var bytes = await getAdressBytes();
+  static Future<String> adressBase64() async {
+    var bytes = await adressBytes();
     return base64Encode(bytes);
   }
 
   /// Get personal adress in form of `String` base64.
-  Future<Uint8List> getAdressBytes() async {
+  static Future<Uint8List> adressBytes() async {
     var prefs = await SharedPreferences.getInstance();
     var key = prefs.getString('persPub') ?? 'error';
     var keyBytes = CryptoUtils.getBytesFromPEMString(key);
@@ -41,7 +41,7 @@ class Crypter {
   }
 
   /// Decrypt encrypted message.
-  Future<String> decryptMes(String message) async {
+  static Future<String> decrypt(String message) async {
     var prefs = await SharedPreferences.getInstance();
     var mesPublic = prefs.getString('mesPriv') ?? 'error';
     if (mesPublic == 'error') {
@@ -55,7 +55,7 @@ class Crypter {
   }
 
   /// Encrypted message.
-  Future<String> encryptMes(String message) async {
+  static Future<String> encrypt(String message) async {
     var prefs = await SharedPreferences.getInstance();
     var mesPublic = prefs.getString('mesPub') ?? 'error';
     if (mesPublic == 'error') {
@@ -69,7 +69,7 @@ class Crypter {
   }
 
   /// Export keys as a single `String`.
-  Future<String> exportKeys() async {
+  static Future<String> export() async {
     var prefs = await SharedPreferences.getInstance();
     var persPriv = prefs.getString('persPriv') ?? 'error';
     var persPub = prefs.getString('persPub') ?? 'error';
@@ -90,7 +90,7 @@ class Crypter {
   }
 
   /// Import and save keys from a single `String`.
-  Future<bool> importKeys(String keys) async {
+  static Future<bool> import(String keys) async {
     var keysListToCheck = keys.split('|');
     if (keysListToCheck.length != 4) {
       return false;
@@ -109,10 +109,19 @@ class Crypter {
     return true;
   }
 
+  static Future<bool> _checkKeyString(String key) async {
+    try {
+      CryptoUtils.getBytesFromPEMString(key);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   /// Generate new pack of keys.
   void generateKeys() async {
-    var firstPair = await compute(_generateSinglePair, 3976);
-    var secondPair = await compute(_generateSinglePair, 2149);
+    var firstPair = await compute(_generateSingleKeyPair, 3976);
+    var secondPair = await compute(_generateSingleKeyPair, 2149);
     var prefs = await SharedPreferences.getInstance();
     prefs.setString("persPriv", firstPair[0]);
     prefs.setString("persPub", firstPair[1]);
@@ -120,7 +129,7 @@ class Crypter {
     prefs.setString("mesPub", secondPair[1]);
   }
 
-  List<String> _generateSinglePair(int bitLength) {
+  static List<String> _generateSingleKeyPair(int bitLength) {
     final secureRandom = FortunaRandom();
     final seedSource = Random.secure();
     final seeds = <int>[];
@@ -148,17 +157,8 @@ class Crypter {
     ];
   }
 
-  Future<bool> _checkKeyString(String key) async {
-    try {
-      CryptoUtils.getBytesFromPEMString(key);
-      return true;
-    } catch (_) {
-      return false;
-    }
-  }
-
   /// Sign data using personal private key.
-  Future<Uint8List> signBytes(Uint8List data) async {
+  static Future<Uint8List> sign(Uint8List data) async {
     var prefs = await SharedPreferences.getInstance();
     var keyPem = prefs.getString('persPriv') ?? 'error';
     var key = CryptoUtils.rsaPrivateKeyFromPemPkcs1(keyPem);
