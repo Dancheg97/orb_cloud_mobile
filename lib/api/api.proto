@@ -4,13 +4,14 @@ option go_package = "./api";
 
 package api;
 
-/*
-CODE GENERATION BASH COMMANDS:
+/*---------------   CODE GENERATION BASH COMMANDS:   --------------------------
 Go:
 protoc api/api.proto --go-grpc_out=. --go_out=.
+
 Dart:
 protoc lib/api/api.proto --dart_out=grpc:.
-*/
+
+-----------------------------------------------------------------------------*/ 
 
 // Response (universal response, when no return value required)
 message Response{}
