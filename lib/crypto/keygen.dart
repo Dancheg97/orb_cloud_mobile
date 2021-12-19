@@ -13,7 +13,7 @@ void generate() async {
   var secondPair = await compute(_generateSingleKeyPair, 2149);
   var prefs = await SharedPreferences.getInstance();
   prefs.setString("personalPrivateKey", firstPair[0]);
-  prefs.setString("personalMessageKey", firstPair[1]);
+  prefs.setString("personalPublicKey", firstPair[1]);
   prefs.setString("messagePrivateKey", secondPair[0]);
   prefs.setString("messagePublicKey", secondPair[1]);
 }

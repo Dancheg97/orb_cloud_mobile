@@ -1,22 +1,21 @@
+import 'package:ORBmobile/crypto/keys.dart';
 import 'package:basic_utils/basic_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> exportKeys() async {
   var prefs = await SharedPreferences.getInstance();
-  var persPriv = prefs.getString('personalPrivateKey') ?? 'error';
-  var persPub = prefs.getString('personalMessageKey') ?? 'error';
-  var mesPriv = prefs.getString('messagePrivateKey') ?? 'error';
-  var mesPub = prefs.getString('messagePublicKey') ?? 'error';
-  List<String> keysStrings = [
+  var persPriv = prefs.getString('personalPrivateKey')!;
+  var persPub = prefs.getString('personalPublicKey')!;
+  var mesPriv = prefs.getString('messagePrivateKey')!;
+  var mesPub = prefs.getString('messagePublicKey')!;
+  List<String?> keysStrings = [
     persPriv,
     persPub,
     mesPriv,
     mesPub,
   ];
-  if (keysStrings.contains('error')) {
-    throw Exception(
-      'this function should not be called if keys are not generated',
-    );
+  for (var key in keysStrings) {
+    keyCheck(key);
   }
   return keysStrings.join("|");
 }
@@ -36,7 +35,7 @@ Future<bool> importKeys(String keys) async {
   }
   var prefs = await SharedPreferences.getInstance();
   prefs.setString('personalPrivateKey', keysListToCheck[0]);
-  prefs.setString('personalMessageKey', keysListToCheck[1]);
+  prefs.setString('personalPublicKey', keysListToCheck[1]);
   prefs.setString('messagePrivateKey', keysListToCheck[2]);
   prefs.setString('messagePublicKey', keysListToCheck[3]);
   return true;
