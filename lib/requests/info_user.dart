@@ -3,10 +3,10 @@ import 'dart:typed_data';
 
 class UserInfo {
   String publicName;
-  int balance;
+  double balance;
   Uint8List messageKey;
   List<Uint8List> marketAdresses;
-  List<int> marketBalances;
+  List<double> marketBalances;
   UserInfo({
     required this.publicName,
     required this.balance,
@@ -19,10 +19,10 @@ class UserInfo {
 UserInfo transformUserInfo(InfOut_User response) {
   return UserInfo(
     publicName: response.publicName,
-    balance: response.balance.toInt(),
+    balance: response.balance,
     messageKey: Uint8List.fromList(response.messageKey),
     marketAdresses: response.marketAdresses.map(Uint8List.fromList).toList(),
-    marketBalances: response.marketBalances.map((val) => val.toInt()).toList(),
+    marketBalances: response.marketBalances.map((val) => val).toList(),
   );
 }
 
