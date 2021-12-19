@@ -11,7 +11,7 @@ class MarketInfoStream {
   });
 }
 
-MarketInfoStream infoMarketSubscribe(Uint8List adress) {
+MarketInfoStream infoMarketSubscribtion(Uint8List adress) {
   var grpcStream = infoStub.marketSubscribe(
     InfIn_Adress(adress: adress),
   );

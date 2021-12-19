@@ -13,17 +13,6 @@ import 'port.dart';
 /// Functions might throw an error, in case keys haven't being saved.
 /// -----
 /// Function description is available on call.
-/// 
-/// -----
-/// Available functions:
-/// - adressBytes
-/// - adressBase64
-/// - decrypt
-/// - encrypt
-/// - export keys
-/// - import keys
-/// - generate
-/// - sign
 class Crypter {
   /// Get personal adress in form of `Uint8List`.
   static Future<String> adressBase64() {

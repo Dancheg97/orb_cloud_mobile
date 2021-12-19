@@ -10,7 +10,7 @@ class UserInfoStream {
   });
 }
 
-UserInfoStream infoUserSubscribe(
+UserInfoStream infoMessageSubscribtion(
   Uint8List marketAdress,
   Uint8List userAdress,
 ) {
