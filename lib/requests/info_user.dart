@@ -26,7 +26,7 @@ UserInfo transformUserInfo(InfOut_User response) {
   );
 }
 
-Future<UserInfo> user(Uint8List adress) async {
+Future<UserInfo> infoUser(Uint8List adress) async {
   var response = await infoStub.user(
     InfIn_Adress(adress: adress),
   );

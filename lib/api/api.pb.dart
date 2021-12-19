@@ -588,13 +588,13 @@ class InfOut_Adresses extends $pb.GeneratedMessage {
 
 class InfOut_Messages extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfOut.Messages', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
-    ..p<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PY)
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages')
     ..hasRequiredFields = false
   ;
 
   InfOut_Messages._() : super();
   factory InfOut_Messages({
-    $core.Iterable<$core.List<$core.int>>? messages,
+    $core.Iterable<$core.String>? messages,
   }) {
     final _result = create();
     if (messages != null) {
@@ -624,7 +624,7 @@ class InfOut_Messages extends $pb.GeneratedMessage {
   static InfOut_Messages? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.List<$core.int>> get messages => $_getList(0);
+  $core.List<$core.String> get messages => $_getList(0);
 }
 
 class InfOut_Bool extends $pb.GeneratedMessage {

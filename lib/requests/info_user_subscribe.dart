@@ -11,7 +11,7 @@ class UserInfoStream {
   });
 }
 
-UserInfoStream userSubscribe(Uint8List adress) {
+UserInfoStream infoUserSubscribe(Uint8List adress) {
   var grpcStream = infoStub.userSubscribe(
     InfIn_Adress(adress: adress),
   );

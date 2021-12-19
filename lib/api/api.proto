@@ -89,7 +89,7 @@ message InfOut{
         repeated bytes marketAdresses = 1;
     }
     message Messages{
-        repeated bytes messages = 1;
+        repeated string messages = 1;
     }
     message Bool{
         bool value = 1;

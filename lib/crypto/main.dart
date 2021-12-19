@@ -23,26 +23,42 @@ import 'port.dart';
 /// - sign
 class Crypter {
   /// Get personal adress in form of `Uint8List`.
-  static Future<String> Function() adressBase64 = getAdressBase64;
+  static Future<String> adressBase64() {
+    return getAdressBase64();
+  }
 
   /// Get personal adress in form of `String` base64.
-  static Future<Uint8List> Function() adressBytes = getAdressBytes;
+  static Future<Uint8List> adressBytes() {
+    return getAdressBytes();
+  }
 
   /// Decrypt encrypted message.
-  static Future<String> Function(String) encrypt = encryptString;
+  static Future<String> encrypt(String message) {
+    return encryptString(message);
+  }
 
   /// Encrypted message.
-  static Future<String> Function(String) decrypt = decryptString;
+  static Future<String> decrypt(String message) {
+    return decryptString(message);
+  }
 
   /// Export keys as a single `String`.
-  static Future<String> Function() export = exportKeys;
+  static Future<String> export() {
+    return exportKeys();
+  }
 
   /// Import and save keys from a single `String`.
-  static Future<bool> Function(String) import = importKeys;
+  static Future<bool> import(String keys) {
+    return importKeys(keys);
+  }
 
   /// Generate new pack of keys.
-  void generateKeys = generate;
+  void generateKeys() {
+    generate();
+  }
 
   /// Sign data using personal private key.
-  static Future<Uint8List> Function(Uint8List) sign = signBytes;
+  static Future<Uint8List> sign(Uint8List bytes) {
+    return signBytes(bytes);
+  }
 }
