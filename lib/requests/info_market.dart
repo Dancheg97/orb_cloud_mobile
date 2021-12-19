@@ -66,7 +66,7 @@ Trade transformTrade(InfOut_Trade response) {
   );
 }
 
-Future<MarketInfo> marketInfo(Uint8List adress) async {
+Future<MarketInfo> infoMarket(Uint8List adress) async {
   var response = await infoStub.market(
     InfIn_Adress(
       adress: adress,

@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:ORBmobile/requests/info_check_name.dart';
 import 'package:ORBmobile/requests/info_has_trades.dart';
+import 'package:ORBmobile/requests/info_market.dart';
 
 /// ### InfoRequests (static class)
 /// ---
@@ -24,5 +25,9 @@ class Info {
 
   /// Function that gives a class containing all information related to
   /// specific market
-  static Future<>
+  static Future<MarketInfo> marketInfo(Uint8List adress) {
+    return infoMarket(adress);
+  }
+
+  ///
 }
