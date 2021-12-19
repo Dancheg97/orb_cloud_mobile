@@ -4,10 +4,10 @@ import 'info_user.dart';
 
 class UserInfoStream {
   Stream<UserInfo> stream;
-  Function canceler;
+  Function cancel;
   UserInfoStream({
     required this.stream,
-    required this.canceler,
+    required this.cancel,
   });
 }
 
@@ -26,7 +26,7 @@ Future<UserInfoStream> userSubscribe(Uint8List adress) async {
   );
   var userInfoStream = UserInfoStream(
     stream: dartStream,
-    canceler: grpcStream.cancel,
+    cancel: grpcStream.cancel,
   );
   return userInfoStream;
 }

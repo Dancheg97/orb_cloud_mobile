@@ -17,8 +17,8 @@ import 'port.dart';
 /// - adressBase64
 /// - decrypt
 /// - encrypt
-/// - export
-/// - import
+/// - export keys
+/// - import keys
 /// - generate
 /// - sign
 class Crypter {
