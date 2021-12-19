@@ -10,7 +10,10 @@ import 'port.dart';
 /// -----
 /// This is static class that contains only links to crytography
 /// functions functions that can be used in the app.
-/// Functions Might throw an error, in case keys haven't being saved.
+/// Functions might throw an error, in case keys haven't being saved.
+/// -----
+/// Function description is available on call.
+/// 
 /// -----
 /// Available functions:
 /// - adressBytes

@@ -1,7 +1,5 @@
 import 'dart:typed_data';
-
-import 'package:ORBmobile/api/main.dart';
-
+import '../api/main.dart';
 import 'info_market.dart';
 
 class MarketInfoStream {

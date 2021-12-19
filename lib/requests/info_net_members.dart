@@ -1,4 +1,4 @@
-import 'package:ORBmobile/api/main.dart';
+import '../api/main.dart';
 
 Future<List<String>> infoNetMembers() async {
   var response = await infoStub.netMembers(

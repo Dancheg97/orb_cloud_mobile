@@ -1,6 +1,5 @@
 import 'dart:typed_data';
-
-import 'package:ORBmobile/api/main.dart';
+import '../api/main.dart';
 
 Future<List<String>> infoMessages(
   Uint8List marketAdress,
