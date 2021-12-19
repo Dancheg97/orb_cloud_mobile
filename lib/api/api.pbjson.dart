@@ -64,10 +64,10 @@ const InfOut_User$json = const {
   '1': 'User',
   '2': const [
     const {'1': 'public_name', '3': 1, '4': 1, '5': 9, '10': 'publicName'},
-    const {'1': 'balance', '3': 2, '4': 1, '5': 4, '10': 'balance'},
+    const {'1': 'balance', '3': 2, '4': 1, '5': 1, '10': 'balance'},
     const {'1': 'message_key', '3': 3, '4': 1, '5': 12, '10': 'messageKey'},
     const {'1': 'market_adresses', '3': 4, '4': 3, '5': 12, '10': 'marketAdresses'},
-    const {'1': 'market_balances', '3': 5, '4': 3, '5': 4, '10': 'marketBalances'},
+    const {'1': 'market_balances', '3': 5, '4': 3, '5': 1, '10': 'marketBalances'},
   ],
 };
 
@@ -79,15 +79,15 @@ const InfOut_MarketInfo$json = const {
     const {'1': 'messageKey', '3': 2, '4': 1, '5': 12, '10': 'messageKey'},
     const {'1': 'imageLink', '3': 3, '4': 1, '5': 9, '10': 'imageLink'},
     const {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
-    const {'1': 'operationCount', '3': 5, '4': 1, '5': 4, '10': 'operationCount'},
+    const {'1': 'operationCount', '3': 5, '4': 1, '5': 1, '10': 'operationCount'},
     const {'1': 'buys', '3': 6, '4': 3, '5': 11, '6': '.api.InfOut.Trade', '10': 'buys'},
     const {'1': 'sells', '3': 7, '4': 3, '5': 11, '6': '.api.InfOut.Trade', '10': 'sells'},
-    const {'1': 'activeBuys', '3': 8, '4': 1, '5': 4, '10': 'activeBuys'},
-    const {'1': 'activeSells', '3': 9, '4': 1, '5': 4, '10': 'activeSells'},
-    const {'1': 'inputFee', '3': 10, '4': 1, '5': 4, '10': 'inputFee'},
-    const {'1': 'outputFee', '3': 11, '4': 1, '5': 4, '10': 'outputFee'},
+    const {'1': 'activeBuys', '3': 8, '4': 1, '5': 1, '10': 'activeBuys'},
+    const {'1': 'activeSells', '3': 9, '4': 1, '5': 1, '10': 'activeSells'},
+    const {'1': 'inputFee', '3': 10, '4': 1, '5': 1, '10': 'inputFee'},
+    const {'1': 'outputFee', '3': 11, '4': 1, '5': 1, '10': 'outputFee'},
     const {'1': 'workTime', '3': 12, '4': 1, '5': 9, '10': 'workTime'},
-    const {'1': 'delimiter', '3': 14, '4': 1, '5': 4, '10': 'delimiter'},
+    const {'1': 'delimiter', '3': 14, '4': 1, '5': 1, '10': 'delimiter'},
   ],
 };
 
@@ -119,8 +119,8 @@ const InfOut_Bool$json = const {
 const InfOut_Trade$json = const {
   '1': 'Trade',
   '2': const [
-    const {'1': 'offer', '3': 1, '4': 1, '5': 4, '10': 'offer'},
-    const {'1': 'recieve', '3': 2, '4': 1, '5': 4, '10': 'recieve'},
+    const {'1': 'offer', '3': 1, '4': 1, '5': 1, '10': 'offer'},
+    const {'1': 'recieve', '3': 2, '4': 1, '5': 1, '10': 'recieve'},
   ],
 };
 
@@ -133,7 +133,7 @@ const InfOut_IPs$json = const {
 };
 
 /// Descriptor for `InfOut`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List infOutDescriptor = $convert.base64Decode('CgZJbmZPdXQatAEKBFVzZXISHwoLcHVibGljX25hbWUYASABKAlSCnB1YmxpY05hbWUSGAoHYmFsYW5jZRgCIAEoBFIHYmFsYW5jZRIfCgttZXNzYWdlX2tleRgDIAEoDFIKbWVzc2FnZUtleRInCg9tYXJrZXRfYWRyZXNzZXMYBCADKAxSDm1hcmtldEFkcmVzc2VzEicKD21hcmtldF9iYWxhbmNlcxgFIAMoBFIObWFya2V0QmFsYW5jZXMargMKCk1hcmtldEluZm8SEgoEbmFtZRgBIAEoCVIEbmFtZRIeCgptZXNzYWdlS2V5GAIgASgMUgptZXNzYWdlS2V5EhwKCWltYWdlTGluaxgDIAEoCVIJaW1hZ2VMaW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhImCg5vcGVyYXRpb25Db3VudBgFIAEoBFIOb3BlcmF0aW9uQ291bnQSJQoEYnV5cxgGIAMoCzIRLmFwaS5JbmZPdXQuVHJhZGVSBGJ1eXMSJwoFc2VsbHMYByADKAsyES5hcGkuSW5mT3V0LlRyYWRlUgVzZWxscxIeCgphY3RpdmVCdXlzGAggASgEUgphY3RpdmVCdXlzEiAKC2FjdGl2ZVNlbGxzGAkgASgEUgthY3RpdmVTZWxscxIaCghpbnB1dEZlZRgKIAEoBFIIaW5wdXRGZWUSHAoJb3V0cHV0RmVlGAsgASgEUglvdXRwdXRGZWUSGgoId29ya1RpbWUYDCABKAlSCHdvcmtUaW1lEhwKCWRlbGltaXRlchgOIAEoBFIJZGVsaW1pdGVyGjIKCEFkcmVzc2VzEiYKDm1hcmtldEFkcmVzc2VzGAEgAygMUg5tYXJrZXRBZHJlc3NlcxomCghNZXNzYWdlcxIaCghtZXNzYWdlcxgBIAMoDFIIbWVzc2FnZXMaHAoEQm9vbBIUCgV2YWx1ZRgBIAEoCFIFdmFsdWUaNwoFVHJhZGUSFAoFb2ZmZXIYASABKARSBW9mZmVyEhgKB3JlY2lldmUYAiABKARSB3JlY2lldmUaIQoDSVBzEhoKCGFkcmVzc2VzGAEgAygJUghhZHJlc3Nlcw==');
+final $typed_data.Uint8List infOutDescriptor = $convert.base64Decode('CgZJbmZPdXQatAEKBFVzZXISHwoLcHVibGljX25hbWUYASABKAlSCnB1YmxpY05hbWUSGAoHYmFsYW5jZRgCIAEoAVIHYmFsYW5jZRIfCgttZXNzYWdlX2tleRgDIAEoDFIKbWVzc2FnZUtleRInCg9tYXJrZXRfYWRyZXNzZXMYBCADKAxSDm1hcmtldEFkcmVzc2VzEicKD21hcmtldF9iYWxhbmNlcxgFIAMoAVIObWFya2V0QmFsYW5jZXMargMKCk1hcmtldEluZm8SEgoEbmFtZRgBIAEoCVIEbmFtZRIeCgptZXNzYWdlS2V5GAIgASgMUgptZXNzYWdlS2V5EhwKCWltYWdlTGluaxgDIAEoCVIJaW1hZ2VMaW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhImCg5vcGVyYXRpb25Db3VudBgFIAEoAVIOb3BlcmF0aW9uQ291bnQSJQoEYnV5cxgGIAMoCzIRLmFwaS5JbmZPdXQuVHJhZGVSBGJ1eXMSJwoFc2VsbHMYByADKAsyES5hcGkuSW5mT3V0LlRyYWRlUgVzZWxscxIeCgphY3RpdmVCdXlzGAggASgBUgphY3RpdmVCdXlzEiAKC2FjdGl2ZVNlbGxzGAkgASgBUgthY3RpdmVTZWxscxIaCghpbnB1dEZlZRgKIAEoAVIIaW5wdXRGZWUSHAoJb3V0cHV0RmVlGAsgASgBUglvdXRwdXRGZWUSGgoId29ya1RpbWUYDCABKAlSCHdvcmtUaW1lEhwKCWRlbGltaXRlchgOIAEoAVIJZGVsaW1pdGVyGjIKCEFkcmVzc2VzEiYKDm1hcmtldEFkcmVzc2VzGAEgAygMUg5tYXJrZXRBZHJlc3NlcxomCghNZXNzYWdlcxIaCghtZXNzYWdlcxgBIAMoDFIIbWVzc2FnZXMaHAoEQm9vbBIUCgV2YWx1ZRgBIAEoCFIFdmFsdWUaNwoFVHJhZGUSFAoFb2ZmZXIYASABKAFSBW9mZmVyEhgKB3JlY2lldmUYAiABKAFSB3JlY2lldmUaIQoDSVBzEhoKCGFkcmVzc2VzGAEgAygJUghhZHJlc3Nlcw==');
 @$core.Deprecated('Use userRequestsDescriptor instead')
 const UserRequests$json = const {
   '1': 'UserRequests',
@@ -156,7 +156,7 @@ const UserRequests_Send$json = const {
   '1': 'Send',
   '2': const [
     const {'1': 'PublicKey', '3': 1, '4': 1, '5': 12, '10': 'PublicKey'},
-    const {'1': 'SendAmount', '3': 2, '4': 1, '5': 4, '10': 'SendAmount'},
+    const {'1': 'SendAmount', '3': 2, '4': 1, '5': 1, '10': 'SendAmount'},
     const {'1': 'RecieverAdress', '3': 3, '4': 1, '5': 12, '10': 'RecieverAdress'},
     const {'1': 'Sign', '3': 4, '4': 1, '5': 12, '10': 'Sign'},
   ],
@@ -179,8 +179,8 @@ const UserRequests_Trade$json = const {
   '2': const [
     const {'1': 'PublicKey', '3': 1, '4': 1, '5': 12, '10': 'PublicKey'},
     const {'1': 'Adress', '3': 2, '4': 1, '5': 12, '10': 'Adress'},
-    const {'1': 'Recieve', '3': 3, '4': 1, '5': 4, '10': 'Recieve'},
-    const {'1': 'Offer', '3': 4, '4': 1, '5': 4, '10': 'Offer'},
+    const {'1': 'Recieve', '3': 3, '4': 1, '5': 1, '10': 'Recieve'},
+    const {'1': 'Offer', '3': 4, '4': 1, '5': 1, '10': 'Offer'},
     const {'1': 'Sign', '3': 5, '4': 1, '5': 12, '10': 'Sign'},
   ],
 };
@@ -196,7 +196,7 @@ const UserRequests_CancelTrade$json = const {
 };
 
 /// Descriptor for `UserRequests`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestsDescriptor = $convert.base64Decode('CgxVc2VyUmVxdWVzdHMafAoGQ3JlYXRlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EiAKC01lc3NzYWdlS2V5GAIgASgMUgtNZXNzc2FnZUtleRIeCgpQdWJsaWNOYW1lGAMgASgJUgpQdWJsaWNOYW1lEhIKBFNpZ24YBCABKAxSBFNpZ24agAEKBFNlbmQSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKU2VuZEFtb3VudBgCIAEoBFIKU2VuZEFtb3VudBImCg5SZWNpZXZlckFkcmVzcxgDIAEoDFIOUmVjaWV2ZXJBZHJlc3MSEgoEU2lnbhgEIAEoDFIEU2lnbhptCgdNZXNzYWdlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EhYKBkFkcmVzcxgCIAEoDFIGQWRyZXNzEhgKB01lc3NhZ2UYAyABKAxSB01lc3NhZ2USEgoEU2lnbhgEIAEoDFIEU2lnbhqBAQoFVHJhZGUSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSFgoGQWRyZXNzGAIgASgMUgZBZHJlc3MSGAoHUmVjaWV2ZRgDIAEoBFIHUmVjaWV2ZRIUCgVPZmZlchgEIAEoBFIFT2ZmZXISEgoEU2lnbhgFIAEoDFIEU2lnbhpjCgtDYW5jZWxUcmFkZRIcCglQdWJsaWNLZXkYASABKAxSCVB1YmxpY0tleRIiCgxNYXJrZXRBZHJlc3MYAiABKAxSDE1hcmtldEFkcmVzcxISCgRTaWduGAMgASgMUgRTaWdu');
+final $typed_data.Uint8List userRequestsDescriptor = $convert.base64Decode('CgxVc2VyUmVxdWVzdHMafAoGQ3JlYXRlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EiAKC01lc3NzYWdlS2V5GAIgASgMUgtNZXNzc2FnZUtleRIeCgpQdWJsaWNOYW1lGAMgASgJUgpQdWJsaWNOYW1lEhIKBFNpZ24YBCABKAxSBFNpZ24agAEKBFNlbmQSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKU2VuZEFtb3VudBgCIAEoAVIKU2VuZEFtb3VudBImCg5SZWNpZXZlckFkcmVzcxgDIAEoDFIOUmVjaWV2ZXJBZHJlc3MSEgoEU2lnbhgEIAEoDFIEU2lnbhptCgdNZXNzYWdlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EhYKBkFkcmVzcxgCIAEoDFIGQWRyZXNzEhgKB01lc3NhZ2UYAyABKAxSB01lc3NhZ2USEgoEU2lnbhgEIAEoDFIEU2lnbhqBAQoFVHJhZGUSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSFgoGQWRyZXNzGAIgASgMUgZBZHJlc3MSGAoHUmVjaWV2ZRgDIAEoAVIHUmVjaWV2ZRIUCgVPZmZlchgEIAEoAVIFT2ZmZXISEgoEU2lnbhgFIAEoDFIEU2lnbhpjCgtDYW5jZWxUcmFkZRIcCglQdWJsaWNLZXkYASABKAxSCVB1YmxpY0tleRIiCgxNYXJrZXRBZHJlc3MYAiABKAxSDE1hcmtldEFkcmVzcxISCgRTaWduGAMgASgMUgRTaWdu');
 @$core.Deprecated('Use marketRequestsDescriptor instead')
 const MarketRequests$json = const {
   '1': 'MarketRequests',
@@ -212,10 +212,10 @@ const MarketRequests_Create$json = const {
     const {'1': 'Name', '3': 3, '4': 1, '5': 9, '10': 'Name'},
     const {'1': 'Img', '3': 4, '4': 1, '5': 9, '10': 'Img'},
     const {'1': 'Descr', '3': 5, '4': 1, '5': 9, '10': 'Descr'},
-    const {'1': 'inputFee', '3': 6, '4': 1, '5': 4, '10': 'inputFee'},
-    const {'1': 'outputFee', '3': 7, '4': 1, '5': 4, '10': 'outputFee'},
+    const {'1': 'inputFee', '3': 6, '4': 1, '5': 1, '10': 'inputFee'},
+    const {'1': 'outputFee', '3': 7, '4': 1, '5': 1, '10': 'outputFee'},
     const {'1': 'workTime', '3': 8, '4': 1, '5': 9, '10': 'workTime'},
-    const {'1': 'delimiter', '3': 9, '4': 1, '5': 4, '10': 'delimiter'},
+    const {'1': 'delimiter', '3': 9, '4': 1, '5': 1, '10': 'delimiter'},
     const {'1': 'Sign', '3': 10, '4': 1, '5': 12, '10': 'Sign'},
   ],
 };
@@ -227,8 +227,8 @@ const MarketRequests_Update$json = const {
     const {'1': 'PublicKey', '3': 1, '4': 1, '5': 12, '10': 'PublicKey'},
     const {'1': 'Img', '3': 2, '4': 1, '5': 9, '10': 'Img'},
     const {'1': 'Descr', '3': 3, '4': 1, '5': 9, '10': 'Descr'},
-    const {'1': 'inputFee', '3': 4, '4': 1, '5': 4, '10': 'inputFee'},
-    const {'1': 'outputFee', '3': 5, '4': 1, '5': 4, '10': 'outputFee'},
+    const {'1': 'inputFee', '3': 4, '4': 1, '5': 1, '10': 'inputFee'},
+    const {'1': 'outputFee', '3': 5, '4': 1, '5': 1, '10': 'outputFee'},
     const {'1': 'workTime', '3': 6, '4': 1, '5': 9, '10': 'workTime'},
     const {'1': 'Sign', '3': 7, '4': 1, '5': 12, '10': 'Sign'},
   ],
@@ -240,7 +240,7 @@ const MarketRequests_Deposit$json = const {
   '2': const [
     const {'1': 'PublicKey', '3': 1, '4': 1, '5': 12, '10': 'PublicKey'},
     const {'1': 'UserAdress', '3': 2, '4': 1, '5': 12, '10': 'UserAdress'},
-    const {'1': 'Amount', '3': 3, '4': 1, '5': 4, '10': 'Amount'},
+    const {'1': 'Amount', '3': 3, '4': 1, '5': 1, '10': 'Amount'},
     const {'1': 'Sign', '3': 4, '4': 1, '5': 12, '10': 'Sign'},
   ],
 };
@@ -251,7 +251,7 @@ const MarketRequests_Withdrawal$json = const {
   '2': const [
     const {'1': 'PublicKey', '3': 1, '4': 1, '5': 12, '10': 'PublicKey'},
     const {'1': 'UserAdress', '3': 2, '4': 1, '5': 12, '10': 'UserAdress'},
-    const {'1': 'Amount', '3': 3, '4': 1, '5': 4, '10': 'Amount'},
+    const {'1': 'Amount', '3': 3, '4': 1, '5': 1, '10': 'Amount'},
     const {'1': 'Sign', '3': 4, '4': 1, '5': 12, '10': 'Sign'},
   ],
 };
@@ -268,7 +268,7 @@ const MarketRequests_Message$json = const {
 };
 
 /// Descriptor for `MarketRequests`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List marketRequestsDescriptor = $convert.base64Decode('Cg5NYXJrZXRSZXF1ZXN0cxqMAgoGQ3JlYXRlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EiAKC01lc3NzYWdlS2V5GAIgASgMUgtNZXNzc2FnZUtleRISCgROYW1lGAMgASgJUgROYW1lEhAKA0ltZxgEIAEoCVIDSW1nEhQKBURlc2NyGAUgASgJUgVEZXNjchIaCghpbnB1dEZlZRgGIAEoBFIIaW5wdXRGZWUSHAoJb3V0cHV0RmVlGAcgASgEUglvdXRwdXRGZWUSGgoId29ya1RpbWUYCCABKAlSCHdvcmtUaW1lEhwKCWRlbGltaXRlchgJIAEoBFIJZGVsaW1pdGVyEhIKBFNpZ24YCiABKAxSBFNpZ24auAEKBlVwZGF0ZRIcCglQdWJsaWNLZXkYASABKAxSCVB1YmxpY0tleRIQCgNJbWcYAiABKAlSA0ltZxIUCgVEZXNjchgDIAEoCVIFRGVzY3ISGgoIaW5wdXRGZWUYBCABKARSCGlucHV0RmVlEhwKCW91dHB1dEZlZRgFIAEoBFIJb3V0cHV0RmVlEhoKCHdvcmtUaW1lGAYgASgJUgh3b3JrVGltZRISCgRTaWduGAcgASgMUgRTaWduGnMKB0RlcG9zaXQSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKVXNlckFkcmVzcxgCIAEoDFIKVXNlckFkcmVzcxIWCgZBbW91bnQYAyABKARSBkFtb3VudBISCgRTaWduGAQgASgMUgRTaWduGnYKCldpdGhkcmF3YWwSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKVXNlckFkcmVzcxgCIAEoDFIKVXNlckFkcmVzcxIWCgZBbW91bnQYAyABKARSBkFtb3VudBISCgRTaWduGAQgASgMUgRTaWduGm0KB01lc3NhZ2USHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSFgoGQWRyZXNzGAIgASgMUgZBZHJlc3MSGAoHTWVzc2FnZRgDIAEoDFIHTWVzc2FnZRISCgRTaWduGAQgASgMUgRTaWdu');
+final $typed_data.Uint8List marketRequestsDescriptor = $convert.base64Decode('Cg5NYXJrZXRSZXF1ZXN0cxqMAgoGQ3JlYXRlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EiAKC01lc3NzYWdlS2V5GAIgASgMUgtNZXNzc2FnZUtleRISCgROYW1lGAMgASgJUgROYW1lEhAKA0ltZxgEIAEoCVIDSW1nEhQKBURlc2NyGAUgASgJUgVEZXNjchIaCghpbnB1dEZlZRgGIAEoAVIIaW5wdXRGZWUSHAoJb3V0cHV0RmVlGAcgASgBUglvdXRwdXRGZWUSGgoId29ya1RpbWUYCCABKAlSCHdvcmtUaW1lEhwKCWRlbGltaXRlchgJIAEoAVIJZGVsaW1pdGVyEhIKBFNpZ24YCiABKAxSBFNpZ24auAEKBlVwZGF0ZRIcCglQdWJsaWNLZXkYASABKAxSCVB1YmxpY0tleRIQCgNJbWcYAiABKAlSA0ltZxIUCgVEZXNjchgDIAEoCVIFRGVzY3ISGgoIaW5wdXRGZWUYBCABKAFSCGlucHV0RmVlEhwKCW91dHB1dEZlZRgFIAEoAVIJb3V0cHV0RmVlEhoKCHdvcmtUaW1lGAYgASgJUgh3b3JrVGltZRISCgRTaWduGAcgASgMUgRTaWduGnMKB0RlcG9zaXQSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKVXNlckFkcmVzcxgCIAEoDFIKVXNlckFkcmVzcxIWCgZBbW91bnQYAyABKAFSBkFtb3VudBISCgRTaWduGAQgASgMUgRTaWduGnYKCldpdGhkcmF3YWwSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKVXNlckFkcmVzcxgCIAEoDFIKVXNlckFkcmVzcxIWCgZBbW91bnQYAyABKAFSBkFtb3VudBISCgRTaWduGAQgASgMUgRTaWduGm0KB01lc3NhZ2USHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSFgoGQWRyZXNzGAIgASgMUgZBZHJlc3MSGAoHTWVzc2FnZRgDIAEoDFIHTWVzc2FnZRISCgRTaWduGAQgASgMUgRTaWdu');
 @$core.Deprecated('Use connectionRequestsDescriptor instead')
 const ConnectionRequests$json = const {
   '1': 'ConnectionRequests',
