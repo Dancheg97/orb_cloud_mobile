@@ -1,16 +1,9 @@
 import 'dart:typed_data';
-import 'dart:math';
 
-import 'package:ORBmobile/crypto/crypt.dart';
-import 'package:flutter/foundation.dart';
-import 'package:pointycastle/key_generators/rsa_key_generator.dart';
-import 'package:pointycastle/pointycastle.dart';
-import 'package:basic_utils/basic_utils.dart';
-import 'package:pointycastle/random/fortuna_random.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'adress.dart';
 import 'crypt.dart';
+import 'keygen.dart';
+import 'sign.dart';
+import 'adress.dart';
 import 'port.dart';
 
 /// ### Crypter (static class)
@@ -48,14 +41,8 @@ class Crypter {
   static Future<bool> Function(String) import = importKeys;
 
   /// Generate new pack of keys.
-  
+  void generateKeys = generate;
 
   /// Sign data using personal private key.
-  static Future<Uint8List> sign(Uint8List data) async {
-    var prefs = await SharedPreferences.getInstance();
-    var keyPem = prefs.getString('persPriv') ?? 'error';
-    var key = CryptoUtils.rsaPrivateKeyFromPemPkcs1(keyPem);
-    var sign = CryptoUtils.rsaSign(key, data, algorithmName: 'SHA-512/RSA');
-    return sign;
-  }
+  static Future<Uint8List> Function(Uint8List) sign = signBytes;
 }

@@ -8,7 +8,7 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:pointycastle/random/fortuna_random.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void generateKeys() async {
+void generate() async {
   var firstPair = await compute(_generateSingleKeyPair, 3976);
   var secondPair = await compute(_generateSingleKeyPair, 2149);
   var prefs = await SharedPreferences.getInstance();
