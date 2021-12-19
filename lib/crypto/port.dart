@@ -3,10 +3,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> exportKeys() async {
   var prefs = await SharedPreferences.getInstance();
-  var persPriv = prefs.getString('persPriv') ?? 'error';
-  var persPub = prefs.getString('persPub') ?? 'error';
-  var mesPriv = prefs.getString('mesPriv') ?? 'error';
-  var mesPub = prefs.getString('mesPub') ?? 'error';
+  var persPriv = prefs.getString('personalPrivateKey') ?? 'error';
+  var persPub = prefs.getString('personalMessageKey') ?? 'error';
+  var mesPriv = prefs.getString('messagePrivateKey') ?? 'error';
+  var mesPub = prefs.getString('messagePublicKey') ?? 'error';
   List<String> keysStrings = [
     persPriv,
     persPub,
@@ -27,20 +27,22 @@ Future<bool> importKeys(String keys) async {
     return false;
   }
   for (int i = 0; i < keysListToCheck.length; i++) {
-    var keyCheckedSuccessfully = await _checkKeyString(keysListToCheck[i]);
+    var keyCheckedSuccessfully = await _checkKeyStringToBeValid(
+      keysListToCheck[i],
+    );
     if (!keyCheckedSuccessfully) {
       return false;
     }
   }
   var prefs = await SharedPreferences.getInstance();
-  prefs.setString('persPriv', keysListToCheck[0]);
-  prefs.setString('persPub', keysListToCheck[1]);
-  prefs.setString('mesPriv', keysListToCheck[2]);
-  prefs.setString('mesPub', keysListToCheck[3]);
+  prefs.setString('personalPrivateKey', keysListToCheck[0]);
+  prefs.setString('personalMessageKey', keysListToCheck[1]);
+  prefs.setString('messagePrivateKey', keysListToCheck[2]);
+  prefs.setString('messagePublicKey', keysListToCheck[3]);
   return true;
 }
 
-Future<bool> _checkKeyString(String key) async {
+Future<bool> _checkKeyStringToBeValid(String key) async {
   try {
     CryptoUtils.getBytesFromPEMString(key);
     return true;
