@@ -1,4 +1,4 @@
-import 'package:ORBmobile/crypto/main.dart';
+import '../crypto/main.dart';
 import '../api/main.dart';
 import 'dart:typed_data';
 
