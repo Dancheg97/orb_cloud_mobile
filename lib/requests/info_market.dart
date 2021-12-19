@@ -2,43 +2,68 @@ import '../api/main.dart';
 import 'dart:typed_data';
 
 class MarketInfo {
-  late final String name;
-  late final Uint8List messageKey;
-  late final String imageLink;
-  late final String description;
-  late final int operationCount;
-  late final List<Trade> buys;
-  late final List<Trade> sells;
-  late final int activeBuys;
-  late final int activeSells;
-  late final int inputFee;
-  late final int outputFee;
-  late final String workTime;
-  late final int delimiter;
-  MarketInfo.fromResponse(InfOut_MarketInfo response) {
-    name = response.name;
-    messageKey = Uint8List.fromList(response.messageKey);
-    imageLink = response.imageLink;
-    description = response.description;
-    operationCount = response.operationCount.toInt();
-    buys = response.buys.map((e) => Trade.fromResponse(e)).toList();
-    sells = response.sells.map((e) => Trade.fromResponse(e)).toList();
-    activeBuys = response.activeBuys.toInt();
-    activeSells = response.activeSells.toInt();
-    inputFee = response.inputFee.toInt();
-    outputFee = response.outputFee.toInt();
-    workTime = response.workTime;
-    delimiter = response.delimiter.toInt();
-  }
+  String name;
+  Uint8List messageKey;
+  String imageLink;
+  String description;
+  int operationCount;
+  List<Trade> buys;
+  List<Trade> sells;
+  int activeBuys;
+  int activeSells;
+  int inputFee;
+  int outputFee;
+  String workTime;
+  int delimiter;
+  MarketInfo({
+    required this.name,
+    required this.messageKey,
+    required this.imageLink,
+    required this.description,
+    required this.operationCount,
+    required this.buys,
+    required this.sells,
+    required this.activeBuys,
+    required this.activeSells,
+    required this.inputFee,
+    required this.outputFee,
+    required this.workTime,
+    required this.delimiter,
+  });
+}
+
+MarketInfo transformMarketInfo(InfOut_MarketInfo response) {
+  return MarketInfo(
+    name: response.name,
+    messageKey: Uint8List.fromList(response.messageKey),
+    imageLink: response.imageLink,
+    description: response.description,
+    operationCount: response.operationCount.toInt(),
+    buys: response.buys.map((e) => transformTrade(e)).toList(),
+    sells: response.sells.map((e) => transformTrade(e)).toList(),
+    activeBuys: response.activeBuys.toInt(),
+    activeSells: response.activeSells.toInt(),
+    inputFee: response.inputFee.toInt(),
+    outputFee: response.outputFee.toInt(),
+    workTime: response.workTime,
+    delimiter: response.delimiter.toInt(),
+  );
 }
 
 class Trade {
-  late final int offer;
-  late final int recieve;
-  Trade.fromResponse(InfOut_Trade response) {
-    offer = response.offer.toInt();
-    recieve = response.recieve.toInt();
-  }
+  int offer;
+  int recieve;
+  Trade({
+    required this.offer,
+    required this.recieve,
+  });
+}
+
+Trade transformTrade(InfOut_Trade response) {
+  return Trade(
+    offer: response.offer.toInt(),
+    recieve: response.recieve.toInt(),
+  );
 }
 
 Future<MarketInfo> marketInfo(Uint8List adress) async {
@@ -47,5 +72,5 @@ Future<MarketInfo> marketInfo(Uint8List adress) async {
       adress: adress,
     ),
   );
-  return MarketInfo.fromResponse(response);
+  return transformMarketInfo(response);
 }

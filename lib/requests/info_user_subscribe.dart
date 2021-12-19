@@ -11,12 +11,12 @@ class UserInfoStream {
   });
 }
 
-Future<UserInfoStream> userSubscribe(Uint8List adress) async {
+UserInfoStream userSubscribe(Uint8List adress) {
   var grpcStream = infoStub.userSubscribe(
     InfIn_Adress(adress: adress),
   );
   var dartStream = grpcStream.map(
-    (response) => UserInfo.fromResponse(response: response),
+    (response) => transformUserInfo(response),
   );
   var userInfoStream = UserInfoStream(
     stream: dartStream,
