@@ -16,7 +16,7 @@ import 'package:ORBmobile/requests/info_user_subscribe.dart';
 /// Request description can be found in `api.proto` file and on method call.
 /// -----
 /// Function description is available on call.
-class Info {
+class InfoCalls {
   /// Call that gives information about user
   static Future<UserInfo> user(Uint8List adress) {
     return infoUser(adress);
