@@ -11,11 +11,20 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class Response extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'passed')
     ..hasRequiredFields = false
   ;
 
   Response._() : super();
-  factory Response() => create();
+  factory Response({
+    $core.bool? passed,
+  }) {
+    final _result = create();
+    if (passed != null) {
+      _result.passed = passed;
+    }
+    return _result;
+  }
   factory Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -36,6 +45,15 @@ class Response extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static Response getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Response>(create);
   static Response? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get passed => $_getBF(0);
+  @$pb.TagNumber(1)
+  set passed($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPassed() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPassed() => clearField(1);
 }
 
 class InfIn_Adress extends $pb.GeneratedMessage {

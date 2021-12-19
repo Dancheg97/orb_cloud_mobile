@@ -1,5 +1,7 @@
 import 'dart:typed_data';
 
+import 'package:ORBmobile/crypto/keys.dart';
+
 import 'crypt.dart';
 import 'keygen.dart';
 import 'sign.dart';
@@ -52,5 +54,15 @@ class Crypter {
   /// Sign data using personal private key.
   static Future<Uint8List> sign(Uint8List bytes) {
     return signBytes(bytes);
+  }
+
+  /// Get personal public key bytes
+  static Future<Uint8List> peronalKeyBytes() {
+    return getKeyBytes('personalPublicKey');
+  }
+
+  /// Get message public key bytes
+  static Future<Uint8List> messageKeyBytes() {
+    return getKeyBytes('messagePublicKey');
   }
 }

@@ -12,7 +12,9 @@ protoc lib/api/api.proto --dart_out=grpc:.
 */ 
 
 // Response (universal response, when no return value required)
-message Response{}
+message Response{
+    bool passed = 1;
+}
 
 // Informational service, user to give user information about current system
 // condition.

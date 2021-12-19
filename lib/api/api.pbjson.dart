@@ -11,10 +11,13 @@ import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use responseDescriptor instead')
 const Response$json = const {
   '1': 'Response',
+  '2': const [
+    const {'1': 'passed', '3': 1, '4': 1, '5': 8, '10': 'passed'},
+  ],
 };
 
 /// Descriptor for `Response`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List responseDescriptor = $convert.base64Decode('CghSZXNwb25zZQ==');
+final $typed_data.Uint8List responseDescriptor = $convert.base64Decode('CghSZXNwb25zZRIWCgZwYXNzZWQYASABKAhSBnBhc3NlZA==');
 @$core.Deprecated('Use infInDescriptor instead')
 const InfIn$json = const {
   '1': 'InfIn',
