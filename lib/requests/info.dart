@@ -6,10 +6,10 @@ import 'dart:typed_data';
 /// ---
 /// This class operates grpc calls to network.
 /// Request description can be found in `api.proto` file.
-/// 
+///
 /// Possible requests:
 /// - hasTrades
-/// 
+/// - userInfo
 class InfoRequests {
   static Future<bool> hasTrades(Uint8List marketAdress) async {
     var response = await infoStub.hasTrades(
