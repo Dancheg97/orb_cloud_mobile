@@ -10,14 +10,4 @@ import 'dart:typed_data';
 /// Possible requests:
 /// - hasTrades
 /// - userInfo
-class InfoRequests {
-  static Future<bool> hasTrades(Uint8List marketAdress) async {
-    var response = await infoStub.hasTrades(
-      InfIn_UserMarketAdr(
-        userAdress: await Crypter.adressBytes(),
-        marketAdress: marketAdress,
-      ),
-    );
-    return response.value;
-  }
-}
+class InfoRequests {}

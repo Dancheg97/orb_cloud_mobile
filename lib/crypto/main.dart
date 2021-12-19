@@ -8,7 +8,7 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:pointycastle/random/fortuna_random.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'dart:convert';
+import 'adress.dart';
 
 /// ### Crypter (static class)
 /// -----
@@ -27,18 +27,10 @@ import 'dart:convert';
 /// - sign
 class Crypter {
   /// Get personal adress in form of `Uint8List`.
-  static Future<String> adressBase64() async {
-    var bytes = await adressBytes();
-    return base64Encode(bytes);
-  }
+  static Future<String> Function() adressBase64 = getAdressBase64;
 
   /// Get personal adress in form of `String` base64.
-  static Future<Uint8List> adressBytes() async {
-    var prefs = await SharedPreferences.getInstance();
-    var key = prefs.getString('persPub') ?? 'error';
-    var keyBytes = CryptoUtils.getBytesFromPEMString(key);
-    return Digest('SHA-512').process(keyBytes);
-  }
+  static Future<Uint8List> Function() adressBytes = getAdressBytes;
 
   /// Decrypt encrypted message.
   static Future<String> decrypt(String message) async {
