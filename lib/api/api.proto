@@ -122,7 +122,7 @@ service User{
     // Call used to initiate buy order placement buy user
     rpc Buy(UserRequests.Trade) returns (Response);
 
-    // Call used to initiate sell operation by user
+    // Call used to initiate sell oreder placement by user
     rpc Sell(UserRequests.Trade) returns (Response);
 
     // Call used to initiate cancelling of existing trade order on market

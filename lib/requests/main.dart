@@ -1,14 +1,21 @@
 import 'dart:typed_data';
 
-import 'package:ORBmobile/requests/info_check_name.dart';
-import 'package:ORBmobile/requests/info_has_trades.dart';
-import 'package:ORBmobile/requests/info_market.dart';
-import 'package:ORBmobile/requests/info_market_subscribe.dart';
-import 'package:ORBmobile/requests/info_messages.dart';
-import 'package:ORBmobile/requests/info_net_members.dart';
-import 'package:ORBmobile/requests/info_search.dart';
-import 'package:ORBmobile/requests/info_user.dart';
-import 'package:ORBmobile/requests/info_user_subscribe.dart';
+import 'info_check_name.dart';
+import 'info_has_trades.dart';
+import 'info_market.dart';
+import 'info_market_subscribe.dart';
+import 'info_messages.dart';
+import 'info_net_members.dart';
+import 'info_search.dart';
+import 'info_user.dart';
+import 'info_user_subscribe.dart';
+
+import 'user_buy.dart';
+import 'user_cancel_trade.dart';
+import 'user_create.dart';
+import 'user_message.dart';
+import 'user_sell.dart';
+import 'user_send.dart';
 
 /// ### InfoRequests (static class)
 /// ---
@@ -65,5 +72,43 @@ class InfoCalls {
   /// Gives information about ip adresses currently hosting the network
   static Future<List<String>> netMembers() {
     return infoNetMembers();
+  }
+}
+
+/// ### UserCalls (static class)
+/// ---
+/// This class operates grpc calls to network.
+/// Request description can be found in `api.proto` file and on method call.
+/// -----
+/// Function description is available on call.
+class UserCalls {
+  /// Call that will create new user
+  static Future<bool> create(String name) {
+    return userCreate(name);
+  }
+
+  /// Call that will initiate transaction between users (send some ORB)
+  static Future<bool> send(Uint8List adress, int amount) {
+    return userSend(adress, amount);
+  }
+
+  /// Call used to send message from user to market
+  static Future<bool> message(Uint8List adress, String message) {
+    return userMessage(adress, message);
+  }
+
+  /// Call used to initiate buy order placement buy user
+  static Future<bool> buy(Uint8List adress, int recieve, int offer) {
+    return userBuy(adress, recieve, offer);
+  }
+
+  /// Call used to initiate sell oreder placement by user
+  static Future<bool> sell(Uint8List adress, int recieve, int offer) {
+    return userSell(adress, recieve, offer);
+  }
+
+  /// Call used to initiate cancelling of existing trade order on market
+  static Future<bool> cancelTrade(Uint8List adress) {
+    return userCancelTrade(adress);
   }
 }
