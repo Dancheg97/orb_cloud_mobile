@@ -171,7 +171,7 @@ const UserRequests_Message$json = const {
   '2': const [
     const {'1': 'PublicKey', '3': 1, '4': 1, '5': 12, '10': 'PublicKey'},
     const {'1': 'Adress', '3': 2, '4': 1, '5': 12, '10': 'Adress'},
-    const {'1': 'Message', '3': 3, '4': 1, '5': 12, '10': 'Message'},
+    const {'1': 'Message', '3': 3, '4': 1, '5': 9, '10': 'Message'},
     const {'1': 'Sign', '3': 4, '4': 1, '5': 12, '10': 'Sign'},
   ],
 };
@@ -199,7 +199,7 @@ const UserRequests_CancelTrade$json = const {
 };
 
 /// Descriptor for `UserRequests`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestsDescriptor = $convert.base64Decode('CgxVc2VyUmVxdWVzdHMafAoGQ3JlYXRlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EiAKC01lc3NzYWdlS2V5GAIgASgMUgtNZXNzc2FnZUtleRIeCgpQdWJsaWNOYW1lGAMgASgJUgpQdWJsaWNOYW1lEhIKBFNpZ24YBCABKAxSBFNpZ24agAEKBFNlbmQSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKU2VuZEFtb3VudBgCIAEoBFIKU2VuZEFtb3VudBImCg5SZWNpZXZlckFkcmVzcxgDIAEoDFIOUmVjaWV2ZXJBZHJlc3MSEgoEU2lnbhgEIAEoDFIEU2lnbhptCgdNZXNzYWdlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EhYKBkFkcmVzcxgCIAEoDFIGQWRyZXNzEhgKB01lc3NhZ2UYAyABKAxSB01lc3NhZ2USEgoEU2lnbhgEIAEoDFIEU2lnbhqBAQoFVHJhZGUSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSFgoGQWRyZXNzGAIgASgMUgZBZHJlc3MSGAoHUmVjaWV2ZRgDIAEoBFIHUmVjaWV2ZRIUCgVPZmZlchgEIAEoBFIFT2ZmZXISEgoEU2lnbhgFIAEoDFIEU2lnbhpjCgtDYW5jZWxUcmFkZRIcCglQdWJsaWNLZXkYASABKAxSCVB1YmxpY0tleRIiCgxNYXJrZXRBZHJlc3MYAiABKAxSDE1hcmtldEFkcmVzcxISCgRTaWduGAMgASgMUgRTaWdu');
+final $typed_data.Uint8List userRequestsDescriptor = $convert.base64Decode('CgxVc2VyUmVxdWVzdHMafAoGQ3JlYXRlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EiAKC01lc3NzYWdlS2V5GAIgASgMUgtNZXNzc2FnZUtleRIeCgpQdWJsaWNOYW1lGAMgASgJUgpQdWJsaWNOYW1lEhIKBFNpZ24YBCABKAxSBFNpZ24agAEKBFNlbmQSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSHgoKU2VuZEFtb3VudBgCIAEoBFIKU2VuZEFtb3VudBImCg5SZWNpZXZlckFkcmVzcxgDIAEoDFIOUmVjaWV2ZXJBZHJlc3MSEgoEU2lnbhgEIAEoDFIEU2lnbhptCgdNZXNzYWdlEhwKCVB1YmxpY0tleRgBIAEoDFIJUHVibGljS2V5EhYKBkFkcmVzcxgCIAEoDFIGQWRyZXNzEhgKB01lc3NhZ2UYAyABKAlSB01lc3NhZ2USEgoEU2lnbhgEIAEoDFIEU2lnbhqBAQoFVHJhZGUSHAoJUHVibGljS2V5GAEgASgMUglQdWJsaWNLZXkSFgoGQWRyZXNzGAIgASgMUgZBZHJlc3MSGAoHUmVjaWV2ZRgDIAEoBFIHUmVjaWV2ZRIUCgVPZmZlchgEIAEoBFIFT2ZmZXISEgoEU2lnbhgFIAEoDFIEU2lnbhpjCgtDYW5jZWxUcmFkZRIcCglQdWJsaWNLZXkYASABKAxSCVB1YmxpY0tleRIiCgxNYXJrZXRBZHJlc3MYAiABKAxSDE1hcmtldEFkcmVzcxISCgRTaWduGAMgASgMUgRTaWdu');
 @$core.Deprecated('Use marketRequestsDescriptor instead')
 const MarketRequests$json = const {
   '1': 'MarketRequests',

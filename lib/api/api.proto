@@ -145,7 +145,7 @@ message UserRequests{
     message Message{
         bytes PublicKey = 1;
         bytes Adress = 2;
-        bytes Message = 3;
+        string Message = 3;
         bytes Sign = 4;
     }
     message Trade{

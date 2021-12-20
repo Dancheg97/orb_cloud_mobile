@@ -1006,7 +1006,7 @@ class UserRequests_Message extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequests.Message', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PublicKey', $pb.PbFieldType.OY, protoName: 'PublicKey')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Adress', $pb.PbFieldType.OY, protoName: 'Adress')
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Message', $pb.PbFieldType.OY, protoName: 'Message')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Message', protoName: 'Message')
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
   ;
@@ -1015,7 +1015,7 @@ class UserRequests_Message extends $pb.GeneratedMessage {
   factory UserRequests_Message({
     $core.List<$core.int>? publicKey,
     $core.List<$core.int>? adress,
-    $core.List<$core.int>? message,
+    $core.String? message,
     $core.List<$core.int>? sign,
   }) {
     final _result = create();
@@ -1073,9 +1073,9 @@ class UserRequests_Message extends $pb.GeneratedMessage {
   void clearAdress() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.int> get message => $_getN(2);
+  $core.String get message => $_getSZ(2);
   @$pb.TagNumber(3)
-  set message($core.List<$core.int> v) { $_setBytes(2, v); }
+  set message($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasMessage() => $_has(2);
   @$pb.TagNumber(3)
