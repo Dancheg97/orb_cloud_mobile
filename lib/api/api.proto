@@ -67,25 +67,25 @@ message InfIn{
 message InfOut{
     message User{
         string public_name = 1;
-        double balance = 2;
+        uint64 balance = 2;
         bytes message_key = 3;
         repeated bytes market_adresses = 4;
-        repeated double market_balances = 5;
+        repeated uint64 market_balances = 5;
     }
     message MarketInfo{
         string name = 1;
         bytes messageKey = 2;
         string imageLink = 3;
         string description = 4;
-        double operationCount = 5;
+        uint64 operationCount = 5;
         repeated Trade buys = 6;
         repeated Trade sells = 7;
-        double activeBuys = 8;
-        double activeSells = 9;
-        double inputFee = 10;
-        double outputFee = 11;
+        uint64 activeBuys = 8;
+        uint64 activeSells = 9;
+        uint64 inputFee = 10;
+        uint64 outputFee = 11;
         string workTime = 12;
-        double delimiter = 14;
+        uint64 delimiter = 14;
     }
     message Adresses{
         repeated bytes marketAdresses = 1;
@@ -97,8 +97,8 @@ message InfOut{
         bool value = 1;
     }
     message Trade{
-        double offer = 1;
-        double recieve = 2;
+        uint64 offer = 1;
+        uint64 recieve = 2;
     }
     message IPs{
         repeated string adresses = 1;
@@ -138,7 +138,7 @@ message UserRequests{
     }
     message Send{
         bytes PublicKey = 1;
-        double SendAmount = 2;
+        uint64 SendAmount = 2;
         bytes RecieverAdress = 3;
         bytes Sign = 4;
     }
@@ -151,8 +151,8 @@ message UserRequests{
     message Trade{
         bytes PublicKey = 1;
         bytes Adress = 2;
-        double Recieve = 3;
-        double Offer = 4;
+        uint64 Recieve = 3;
+        uint64 Offer = 4;
         bytes Sign = 5;
     }
     message CancelTrade{
@@ -180,31 +180,31 @@ message MarketRequests{
         string Name = 3;
         string Img = 4;
         string Descr = 5;
-        double inputFee = 6;
-        double outputFee = 7;
+        uint64 inputFee = 6;
+        uint64 outputFee = 7;
         string workTime = 8;
-        double delimiter = 9;
+        uint64 delimiter = 9;
         bytes Sign = 10;
     }
     message Update{
         bytes PublicKey = 1;
         string Img = 2;
         string Descr = 3;
-        double inputFee = 4;
-        double outputFee = 5;
+        uint64 inputFee = 4;
+        uint64 outputFee = 5;
         string workTime = 6;
         bytes Sign = 7;
     }
     message Deposit{
         bytes PublicKey = 1;
         bytes UserAdress = 2;
-        double Amount = 3;
+        uint64 Amount = 3;
         bytes Sign = 4;
     }
     message Withdrawal{
         bytes PublicKey = 1;
         bytes UserAdress = 2;
-        double Amount = 3;
+        uint64 Amount = 3;
         bytes Sign = 4;
     }
     message Message{

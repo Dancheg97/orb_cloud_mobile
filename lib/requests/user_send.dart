@@ -2,19 +2,19 @@ import 'dart:typed_data';
 
 import 'package:ORBmobile/api/main.dart';
 import 'package:ORBmobile/crypto/main.dart';
+import 'package:fixnum/fixnum.dart';
 
-Future<bool> userCreate(String name) async {
+Future<bool> userSend(Uint8List adress, int amount) async {
   var pubBytes = await Crypter.peronalKeyBytes();
-  var mesBytes = await Crypter.messageKeyBytes();
-  var nameBytes = name.codeUnits;
-  var response = await userStub.create(
-    UserRequests_Create(
+  var amountBytes = Int64(amount).toBytes();
+  var response = await userStub.send(
+    UserRequests_Send(
       publicKey: pubBytes,
-      messsageKey: mesBytes,
-      publicName: name,
+      sendAmount: Int64(amount),
+      recieverAdress: adress,
       sign: await Crypter.sign(
         Uint8List.fromList(
-          pubBytes + mesBytes + nameBytes,
+          pubBytes + amountBytes + adress,
         ),
       ),
     ),

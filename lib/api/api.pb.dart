@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Response extends $pb.GeneratedMessage {
@@ -272,20 +273,20 @@ class InfIn extends $pb.GeneratedMessage {
 class InfOut_User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfOut.User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicName')
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance', $pb.PbFieldType.OD)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageKey', $pb.PbFieldType.OY)
     ..p<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'marketAdresses', $pb.PbFieldType.PY)
-    ..p<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'marketBalances', $pb.PbFieldType.PD)
+    ..p<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'marketBalances', $pb.PbFieldType.PU6)
     ..hasRequiredFields = false
   ;
 
   InfOut_User._() : super();
   factory InfOut_User({
     $core.String? publicName,
-    $core.double? balance,
+    $fixnum.Int64? balance,
     $core.List<$core.int>? messageKey,
     $core.Iterable<$core.List<$core.int>>? marketAdresses,
-    $core.Iterable<$core.double>? marketBalances,
+    $core.Iterable<$fixnum.Int64>? marketBalances,
   }) {
     final _result = create();
     if (publicName != null) {
@@ -336,9 +337,9 @@ class InfOut_User extends $pb.GeneratedMessage {
   void clearPublicName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.double get balance => $_getN(1);
+  $fixnum.Int64 get balance => $_getI64(1);
   @$pb.TagNumber(2)
-  set balance($core.double v) { $_setDouble(1, v); }
+  set balance($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasBalance() => $_has(1);
   @$pb.TagNumber(2)
@@ -357,7 +358,7 @@ class InfOut_User extends $pb.GeneratedMessage {
   $core.List<$core.List<$core.int>> get marketAdresses => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$core.double> get marketBalances => $_getList(4);
+  $core.List<$fixnum.Int64> get marketBalances => $_getList(4);
 }
 
 class InfOut_MarketInfo extends $pb.GeneratedMessage {
@@ -366,15 +367,15 @@ class InfOut_MarketInfo extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageKey', $pb.PbFieldType.OY, protoName: 'messageKey')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageLink', protoName: 'imageLink')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'operationCount', $pb.PbFieldType.OD, protoName: 'operationCount')
+    ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'operationCount', $pb.PbFieldType.OU6, protoName: 'operationCount', defaultOrMaker: $fixnum.Int64.ZERO)
     ..pc<InfOut_Trade>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buys', $pb.PbFieldType.PM, subBuilder: InfOut_Trade.create)
     ..pc<InfOut_Trade>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sells', $pb.PbFieldType.PM, subBuilder: InfOut_Trade.create)
-    ..a<$core.double>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeBuys', $pb.PbFieldType.OD, protoName: 'activeBuys')
-    ..a<$core.double>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeSells', $pb.PbFieldType.OD, protoName: 'activeSells')
-    ..a<$core.double>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputFee', $pb.PbFieldType.OD, protoName: 'inputFee')
-    ..a<$core.double>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputFee', $pb.PbFieldType.OD, protoName: 'outputFee')
+    ..a<$fixnum.Int64>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeBuys', $pb.PbFieldType.OU6, protoName: 'activeBuys', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'activeSells', $pb.PbFieldType.OU6, protoName: 'activeSells', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputFee', $pb.PbFieldType.OU6, protoName: 'inputFee', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputFee', $pb.PbFieldType.OU6, protoName: 'outputFee', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workTime', protoName: 'workTime')
-    ..a<$core.double>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delimiter', $pb.PbFieldType.OD)
+    ..a<$fixnum.Int64>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delimiter', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -384,15 +385,15 @@ class InfOut_MarketInfo extends $pb.GeneratedMessage {
     $core.List<$core.int>? messageKey,
     $core.String? imageLink,
     $core.String? description,
-    $core.double? operationCount,
+    $fixnum.Int64? operationCount,
     $core.Iterable<InfOut_Trade>? buys,
     $core.Iterable<InfOut_Trade>? sells,
-    $core.double? activeBuys,
-    $core.double? activeSells,
-    $core.double? inputFee,
-    $core.double? outputFee,
+    $fixnum.Int64? activeBuys,
+    $fixnum.Int64? activeSells,
+    $fixnum.Int64? inputFee,
+    $fixnum.Int64? outputFee,
     $core.String? workTime,
-    $core.double? delimiter,
+    $fixnum.Int64? delimiter,
   }) {
     final _result = create();
     if (name != null) {
@@ -494,9 +495,9 @@ class InfOut_MarketInfo extends $pb.GeneratedMessage {
   void clearDescription() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.double get operationCount => $_getN(4);
+  $fixnum.Int64 get operationCount => $_getI64(4);
   @$pb.TagNumber(5)
-  set operationCount($core.double v) { $_setDouble(4, v); }
+  set operationCount($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasOperationCount() => $_has(4);
   @$pb.TagNumber(5)
@@ -509,36 +510,36 @@ class InfOut_MarketInfo extends $pb.GeneratedMessage {
   $core.List<InfOut_Trade> get sells => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.double get activeBuys => $_getN(7);
+  $fixnum.Int64 get activeBuys => $_getI64(7);
   @$pb.TagNumber(8)
-  set activeBuys($core.double v) { $_setDouble(7, v); }
+  set activeBuys($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
   $core.bool hasActiveBuys() => $_has(7);
   @$pb.TagNumber(8)
   void clearActiveBuys() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.double get activeSells => $_getN(8);
+  $fixnum.Int64 get activeSells => $_getI64(8);
   @$pb.TagNumber(9)
-  set activeSells($core.double v) { $_setDouble(8, v); }
+  set activeSells($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
   $core.bool hasActiveSells() => $_has(8);
   @$pb.TagNumber(9)
   void clearActiveSells() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.double get inputFee => $_getN(9);
+  $fixnum.Int64 get inputFee => $_getI64(9);
   @$pb.TagNumber(10)
-  set inputFee($core.double v) { $_setDouble(9, v); }
+  set inputFee($fixnum.Int64 v) { $_setInt64(9, v); }
   @$pb.TagNumber(10)
   $core.bool hasInputFee() => $_has(9);
   @$pb.TagNumber(10)
   void clearInputFee() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.double get outputFee => $_getN(10);
+  $fixnum.Int64 get outputFee => $_getI64(10);
   @$pb.TagNumber(11)
-  set outputFee($core.double v) { $_setDouble(10, v); }
+  set outputFee($fixnum.Int64 v) { $_setInt64(10, v); }
   @$pb.TagNumber(11)
   $core.bool hasOutputFee() => $_has(10);
   @$pb.TagNumber(11)
@@ -554,9 +555,9 @@ class InfOut_MarketInfo extends $pb.GeneratedMessage {
   void clearWorkTime() => clearField(12);
 
   @$pb.TagNumber(14)
-  $core.double get delimiter => $_getN(12);
+  $fixnum.Int64 get delimiter => $_getI64(12);
   @$pb.TagNumber(14)
-  set delimiter($core.double v) { $_setDouble(12, v); }
+  set delimiter($fixnum.Int64 v) { $_setInt64(12, v); }
   @$pb.TagNumber(14)
   $core.bool hasDelimiter() => $_has(12);
   @$pb.TagNumber(14)
@@ -694,15 +695,15 @@ class InfOut_Bool extends $pb.GeneratedMessage {
 
 class InfOut_Trade extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InfOut.Trade', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
-    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'offer', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recieve', $pb.PbFieldType.OD)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'offer', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recieve', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   InfOut_Trade._() : super();
   factory InfOut_Trade({
-    $core.double? offer,
-    $core.double? recieve,
+    $fixnum.Int64? offer,
+    $fixnum.Int64? recieve,
   }) {
     final _result = create();
     if (offer != null) {
@@ -735,18 +736,18 @@ class InfOut_Trade extends $pb.GeneratedMessage {
   static InfOut_Trade? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.double get offer => $_getN(0);
+  $fixnum.Int64 get offer => $_getI64(0);
   @$pb.TagNumber(1)
-  set offer($core.double v) { $_setDouble(0, v); }
+  set offer($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasOffer() => $_has(0);
   @$pb.TagNumber(1)
   void clearOffer() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.double get recieve => $_getN(1);
+  $fixnum.Int64 get recieve => $_getI64(1);
   @$pb.TagNumber(2)
-  set recieve($core.double v) { $_setDouble(1, v); }
+  set recieve($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasRecieve() => $_has(1);
   @$pb.TagNumber(2)
@@ -915,7 +916,7 @@ class UserRequests_Create extends $pb.GeneratedMessage {
 class UserRequests_Send extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequests.Send', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PublicKey', $pb.PbFieldType.OY, protoName: 'PublicKey')
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'SendAmount', $pb.PbFieldType.OD, protoName: 'SendAmount')
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'SendAmount', $pb.PbFieldType.OU6, protoName: 'SendAmount', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'RecieverAdress', $pb.PbFieldType.OY, protoName: 'RecieverAdress')
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
@@ -924,7 +925,7 @@ class UserRequests_Send extends $pb.GeneratedMessage {
   UserRequests_Send._() : super();
   factory UserRequests_Send({
     $core.List<$core.int>? publicKey,
-    $core.double? sendAmount,
+    $fixnum.Int64? sendAmount,
     $core.List<$core.int>? recieverAdress,
     $core.List<$core.int>? sign,
   }) {
@@ -974,9 +975,9 @@ class UserRequests_Send extends $pb.GeneratedMessage {
   void clearPublicKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.double get sendAmount => $_getN(1);
+  $fixnum.Int64 get sendAmount => $_getI64(1);
   @$pb.TagNumber(2)
-  set sendAmount($core.double v) { $_setDouble(1, v); }
+  set sendAmount($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasSendAmount() => $_has(1);
   @$pb.TagNumber(2)
@@ -1094,8 +1095,8 @@ class UserRequests_Trade extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequests.Trade', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PublicKey', $pb.PbFieldType.OY, protoName: 'PublicKey')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Adress', $pb.PbFieldType.OY, protoName: 'Adress')
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Recieve', $pb.PbFieldType.OD, protoName: 'Recieve')
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Offer', $pb.PbFieldType.OD, protoName: 'Offer')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Recieve', $pb.PbFieldType.OU6, protoName: 'Recieve', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Offer', $pb.PbFieldType.OU6, protoName: 'Offer', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
   ;
@@ -1104,8 +1105,8 @@ class UserRequests_Trade extends $pb.GeneratedMessage {
   factory UserRequests_Trade({
     $core.List<$core.int>? publicKey,
     $core.List<$core.int>? adress,
-    $core.double? recieve,
-    $core.double? offer,
+    $fixnum.Int64? recieve,
+    $fixnum.Int64? offer,
     $core.List<$core.int>? sign,
   }) {
     final _result = create();
@@ -1166,18 +1167,18 @@ class UserRequests_Trade extends $pb.GeneratedMessage {
   void clearAdress() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.double get recieve => $_getN(2);
+  $fixnum.Int64 get recieve => $_getI64(2);
   @$pb.TagNumber(3)
-  set recieve($core.double v) { $_setDouble(2, v); }
+  set recieve($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasRecieve() => $_has(2);
   @$pb.TagNumber(3)
   void clearRecieve() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.double get offer => $_getN(3);
+  $fixnum.Int64 get offer => $_getI64(3);
   @$pb.TagNumber(4)
-  set offer($core.double v) { $_setDouble(3, v); }
+  set offer($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasOffer() => $_has(3);
   @$pb.TagNumber(4)
@@ -1304,10 +1305,10 @@ class MarketRequests_Create extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Name', protoName: 'Name')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Img', protoName: 'Img')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Descr', protoName: 'Descr')
-    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputFee', $pb.PbFieldType.OD, protoName: 'inputFee')
-    ..a<$core.double>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputFee', $pb.PbFieldType.OD, protoName: 'outputFee')
+    ..a<$fixnum.Int64>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputFee', $pb.PbFieldType.OU6, protoName: 'inputFee', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputFee', $pb.PbFieldType.OU6, protoName: 'outputFee', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workTime', protoName: 'workTime')
-    ..a<$core.double>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delimiter', $pb.PbFieldType.OD)
+    ..a<$fixnum.Int64>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delimiter', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
   ;
@@ -1319,10 +1320,10 @@ class MarketRequests_Create extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? img,
     $core.String? descr,
-    $core.double? inputFee,
-    $core.double? outputFee,
+    $fixnum.Int64? inputFee,
+    $fixnum.Int64? outputFee,
     $core.String? workTime,
-    $core.double? delimiter,
+    $fixnum.Int64? delimiter,
     $core.List<$core.int>? sign,
   }) {
     final _result = create();
@@ -1425,18 +1426,18 @@ class MarketRequests_Create extends $pb.GeneratedMessage {
   void clearDescr() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.double get inputFee => $_getN(5);
+  $fixnum.Int64 get inputFee => $_getI64(5);
   @$pb.TagNumber(6)
-  set inputFee($core.double v) { $_setDouble(5, v); }
+  set inputFee($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasInputFee() => $_has(5);
   @$pb.TagNumber(6)
   void clearInputFee() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.double get outputFee => $_getN(6);
+  $fixnum.Int64 get outputFee => $_getI64(6);
   @$pb.TagNumber(7)
-  set outputFee($core.double v) { $_setDouble(6, v); }
+  set outputFee($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasOutputFee() => $_has(6);
   @$pb.TagNumber(7)
@@ -1452,9 +1453,9 @@ class MarketRequests_Create extends $pb.GeneratedMessage {
   void clearWorkTime() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.double get delimiter => $_getN(8);
+  $fixnum.Int64 get delimiter => $_getI64(8);
   @$pb.TagNumber(9)
-  set delimiter($core.double v) { $_setDouble(8, v); }
+  set delimiter($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
   $core.bool hasDelimiter() => $_has(8);
   @$pb.TagNumber(9)
@@ -1475,8 +1476,8 @@ class MarketRequests_Update extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PublicKey', $pb.PbFieldType.OY, protoName: 'PublicKey')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Img', protoName: 'Img')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Descr', protoName: 'Descr')
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputFee', $pb.PbFieldType.OD, protoName: 'inputFee')
-    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputFee', $pb.PbFieldType.OD, protoName: 'outputFee')
+    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputFee', $pb.PbFieldType.OU6, protoName: 'inputFee', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputFee', $pb.PbFieldType.OU6, protoName: 'outputFee', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'workTime', protoName: 'workTime')
     ..a<$core.List<$core.int>>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
@@ -1487,8 +1488,8 @@ class MarketRequests_Update extends $pb.GeneratedMessage {
     $core.List<$core.int>? publicKey,
     $core.String? img,
     $core.String? descr,
-    $core.double? inputFee,
-    $core.double? outputFee,
+    $fixnum.Int64? inputFee,
+    $fixnum.Int64? outputFee,
     $core.String? workTime,
     $core.List<$core.int>? sign,
   }) {
@@ -1565,18 +1566,18 @@ class MarketRequests_Update extends $pb.GeneratedMessage {
   void clearDescr() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.double get inputFee => $_getN(3);
+  $fixnum.Int64 get inputFee => $_getI64(3);
   @$pb.TagNumber(4)
-  set inputFee($core.double v) { $_setDouble(3, v); }
+  set inputFee($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasInputFee() => $_has(3);
   @$pb.TagNumber(4)
   void clearInputFee() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.double get outputFee => $_getN(4);
+  $fixnum.Int64 get outputFee => $_getI64(4);
   @$pb.TagNumber(5)
-  set outputFee($core.double v) { $_setDouble(4, v); }
+  set outputFee($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasOutputFee() => $_has(4);
   @$pb.TagNumber(5)
@@ -1605,7 +1606,7 @@ class MarketRequests_Deposit extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MarketRequests.Deposit', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PublicKey', $pb.PbFieldType.OY, protoName: 'PublicKey')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'UserAdress', $pb.PbFieldType.OY, protoName: 'UserAdress')
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Amount', $pb.PbFieldType.OD, protoName: 'Amount')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Amount', $pb.PbFieldType.OU6, protoName: 'Amount', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
   ;
@@ -1614,7 +1615,7 @@ class MarketRequests_Deposit extends $pb.GeneratedMessage {
   factory MarketRequests_Deposit({
     $core.List<$core.int>? publicKey,
     $core.List<$core.int>? userAdress,
-    $core.double? amount,
+    $fixnum.Int64? amount,
     $core.List<$core.int>? sign,
   }) {
     final _result = create();
@@ -1672,9 +1673,9 @@ class MarketRequests_Deposit extends $pb.GeneratedMessage {
   void clearUserAdress() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.double get amount => $_getN(2);
+  $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
-  set amount($core.double v) { $_setDouble(2, v); }
+  set amount($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasAmount() => $_has(2);
   @$pb.TagNumber(3)
@@ -1694,7 +1695,7 @@ class MarketRequests_Withdrawal extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MarketRequests.Withdrawal', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'api'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PublicKey', $pb.PbFieldType.OY, protoName: 'PublicKey')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'UserAdress', $pb.PbFieldType.OY, protoName: 'UserAdress')
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Amount', $pb.PbFieldType.OD, protoName: 'Amount')
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Amount', $pb.PbFieldType.OU6, protoName: 'Amount', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Sign', $pb.PbFieldType.OY, protoName: 'Sign')
     ..hasRequiredFields = false
   ;
@@ -1703,7 +1704,7 @@ class MarketRequests_Withdrawal extends $pb.GeneratedMessage {
   factory MarketRequests_Withdrawal({
     $core.List<$core.int>? publicKey,
     $core.List<$core.int>? userAdress,
-    $core.double? amount,
+    $fixnum.Int64? amount,
     $core.List<$core.int>? sign,
   }) {
     final _result = create();
@@ -1761,9 +1762,9 @@ class MarketRequests_Withdrawal extends $pb.GeneratedMessage {
   void clearUserAdress() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.double get amount => $_getN(2);
+  $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
-  set amount($core.double v) { $_setDouble(2, v); }
+  set amount($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasAmount() => $_has(2);
   @$pb.TagNumber(3)

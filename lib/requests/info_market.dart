@@ -6,15 +6,15 @@ class MarketInfo {
   Uint8List messageKey;
   String imageLink;
   String description;
-  double operationCount;
+  int operationCount;
   List<Trade> buys;
   List<Trade> sells;
-  double activeBuys;
-  double activeSells;
-  double inputFee;
-  double outputFee;
+  int activeBuys;
+  int activeSells;
+  int inputFee;
+  int outputFee;
   String workTime;
-  double delimiter;
+  int delimiter;
   MarketInfo({
     required this.name,
     required this.messageKey,
@@ -38,21 +38,21 @@ MarketInfo transformMarketInfo(InfOut_MarketInfo response) {
     messageKey: Uint8List.fromList(response.messageKey),
     imageLink: response.imageLink,
     description: response.description,
-    operationCount: response.operationCount,
+    operationCount: response.operationCount.toInt(),
     buys: response.buys.map((e) => transformTrade(e)).toList(),
     sells: response.sells.map((e) => transformTrade(e)).toList(),
-    activeBuys: response.activeBuys,
-    activeSells: response.activeSells,
-    inputFee: response.inputFee,
-    outputFee: response.outputFee,
+    activeBuys: response.activeBuys.toInt(),
+    activeSells: response.activeSells.toInt(),
+    inputFee: response.inputFee.toInt(),
+    outputFee: response.outputFee.toInt(),
     workTime: response.workTime,
-    delimiter: response.delimiter,
+    delimiter: response.delimiter.toInt(),
   );
 }
 
 class Trade {
-  double offer;
-  double recieve;
+  int offer;
+  int recieve;
   Trade({
     required this.offer,
     required this.recieve,
@@ -61,8 +61,8 @@ class Trade {
 
 Trade transformTrade(InfOut_Trade response) {
   return Trade(
-    offer: response.offer,
-    recieve: response.recieve,
+    offer: response.offer.toInt(),
+    recieve: response.recieve.toInt(),
   );
 }
 
