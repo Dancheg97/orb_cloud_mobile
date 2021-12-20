@@ -2,18 +2,21 @@ import 'dart:typed_data';
 
 import 'package:ORBmobile/api/main.dart';
 import 'package:ORBmobile/crypto/main.dart';
+import 'package:fixnum/fixnum.dart';
 
-Future<bool> userMessage(Uint8List adress, String message) async {
-  var pubBytes = await Crypter.peronalKeyBytes();
-  var cipherMessage = await Crypter.encrypt(message);
-  var response = await userStub.message(
-    UserRequests_Message(
+Future<bool> userMessage(Uint8List adress, int recieve, int offer) async {
+  var pubBytes = await Crypter.adressBytes();
+  var recieveInt64 = Int64(recieve);
+  var offerInt64 = Int64(offer);
+  var response = await userStub.buy(
+    UserRequests_Trade(
       publicKey: pubBytes,
       adress: adress,
-      message: cipherMessage,
+      recieve: recieveInt64,
+      offer: offerInt64,
       sign: await Crypter.sign(
         Uint8List.fromList(
-          pubBytes + cipherMessage.codeUnits + adress,
+          pubBytes + adress + recieveInt64.toBytes() + offerInt64.toBytes(),
         ),
       ),
     ),
