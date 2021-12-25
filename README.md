@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <img width="320px" height="320px" src="https://raw.githubusercontent.com/Dancheg97/ORB/master/icon.png" alt="logo"/>
+  <img width="320px" height="320px" src="https://raw.githubusercontent.com/Dancheg97/orb_cloud_mobile/main/assets/logo-r.png" alt="logo"/>
 </p>
 
 
