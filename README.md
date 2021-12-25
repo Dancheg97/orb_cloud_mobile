@@ -15,7 +15,6 @@ Our project is based on those ideas:
 - fast
 - free
 - secure
-- improving
 
 <br />
 
@@ -68,7 +67,3 @@ ORB is built in such a way, that noone of the users will be charged for inner tr
 Most of cryptocurrecies are built using POS/POF mechanism to solve security problems. Some cryptocurrencies has centered node, which is breaking the concept of `secure by distribution`.
 
 In this project we were able to combine the pros of system distribution over network with rapid fast speed, and we were first to achieve that relation.
-
-## Improving
-
-The biggest problem of most cryptocurrecnies is versioning. It is really challenging when it comes to providing good verioning system in distributed system. This system is connected to `GIT` aswell, and has voting system, which allows modifications across multiple users to occure.
