@@ -1,11 +1,8 @@
+# ARCHIEVE REPO
+
 # ORB - distributed trading system
 
 [![Website](https://img.shields.io/website?label=codeSTACKr.com&style=for-the-badge&url=https%3A%2F%2Fcodestackr.com)](https://webpage.com)
-
-
-<p align="center">
-  <img width="320px" height="320px" src="https://raw.githubusercontent.com/Dancheg97/orb_cloud_mobile/main/assets/logo-r.png" alt="logo"/>
-</p>
 
 
 Our goal is to rework the approach to create cryptocurrency means. That is no longer a piece of software, but an interface and agreement between multiple users.
